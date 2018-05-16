@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Model;
-class User extends Authenticatable
+class Users extends Authenticatable
 {
     use Notifiable;
 
@@ -14,13 +14,16 @@ class User extends Authenticatable
      *
      * @var array
      */
+     public $table = 'users';
     protected $fillable = [
        
         'id' ,
+        'profiles_id',
         'email' ,   
         'password',
     ];
 
+    
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -29,5 +32,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function Profiles()
+    {
+        return $this->hasOne('App\Profiles');
+    }
 }
 

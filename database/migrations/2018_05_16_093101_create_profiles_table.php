@@ -15,11 +15,13 @@ class CreateProfilesTable extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('users_id')->unsinged();
             $table->string('name');
             $table->string('last_name');
             $table->integer('height');
             $table->integer('weight');
             $table->string('experience');
+            
             $table->integer('trainers_id')->unsigned();
             $table->integer('diets_id')->unsigned();
             $table->integer('trainings_id')->unsigned();
@@ -31,6 +33,8 @@ class CreateProfilesTable extends Migration
             $table->foreign('trainers_id')->references('id')->on('profiles');
             $table->foreign('diets_id')->references('id')->on('profiles');
             $table->foreign('trainings_id')->references('id')->on('profiles');
+           
+            
     });
 
 }

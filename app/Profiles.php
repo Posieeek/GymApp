@@ -15,9 +15,11 @@ class Profiles extends Model
      *
      * @var array
      */
+    public $table = 'profiles';
     protected $fillable = [
        
         'id' ,
+        'users_id',
         'name' ,
         'last_name',
         'height' ,
@@ -30,6 +32,11 @@ class Profiles extends Model
     
     ];
     //
+    public function Users()
+    {
+        return $this->hasOne('App\Users');
+    }
+
     public function Trainers()
     {
         return $this->belongsTo('App\Trainers');

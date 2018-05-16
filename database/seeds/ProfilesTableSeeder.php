@@ -12,8 +12,9 @@ class ProfilesTableSeeder extends Seeder
      */
     public function run()
     {
-        $user = Profiles::create([
+        $profiles = Profiles::create([
             'id' => '1',
+            'users_id' => '1',
             'name' => 'Maciej',
             'last_name' => 'Zawadzki',
             'height' => '172',
@@ -23,9 +24,9 @@ class ProfilesTableSeeder extends Seeder
             'diets_id' => '1',
             'trainings_id' => '1',
         ]);
-        $user->save();
+        $profiles->save();
 
-        $users = Profiles::all();
+        $profiles = Profiles::all();
         //
     }
 }
