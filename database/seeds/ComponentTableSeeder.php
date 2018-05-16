@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Component;
+use Faker\Factory as Faker;
 
 class ComponentTableSeeder extends Seeder
 {
@@ -12,11 +13,14 @@ class ComponentTableSeeder extends Seeder
      */
     public function run()
     {
+
         DB::table('components')->insert([
             'id' => '1',
-            'name' => 'kurczak',
+            'name' => 'Kurczok',
             'weight' => '100',
         ]);
+
+        
     
         //
     }

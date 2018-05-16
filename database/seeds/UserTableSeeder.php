@@ -18,6 +18,8 @@ class UserTableSeeder extends Seeder
             'email' => 'posieeek@gmail.com',
             'password' => bcrypt('zxcvb123'),
         ]);
+
+     
       
         //
     }
