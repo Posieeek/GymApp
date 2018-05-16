@@ -42,10 +42,8 @@
             <button type="button" class="btn  btn-block active"><a href="{{ url('/') }} "style="color: rgb(0,0,0)">Home</a></button>
             <button type="button" class="btn  btn-block active"><a href="https://kfd.pl"style="color: rgb(0,0,0)">Trening</a></button>
             <button type="button" class="btn  btn-block active"><a href="https://magdagessler.pl"style="color: rgb(0,0,0)">Diety</a></button>
-            <button type="button" class="btn  btn-block active"><a href="https://filmweb.pl"style="color: rgb(0,0,0)">Filmy</a></button>
-            <button type="button" class="btn  btn-block active"><a href="https://github.com/laravel/laravel"style="color: rgb(0,0,0)">Zdjęcia</a></button>
-            <button type="button" class="btn  btn-block active"><a href="https://www.bodybuilding.com/fun/other7.htm"style="color: rgb(0,0,0)">Kalkulator wyciskania</a></button> 
-            <button type="button" class="btn  btn-block active"><a href="http://bmi-online.pl/"style="color: rgb(0,0,0)">Kalkulator BMI</a></button>
+            <button type="button" class="btn  btn-block active"><a href="{{ url('/gallery') }}"style="color: rgb(0,0,0)">Galeria</a></button>
+            <button type="button" class="btn  btn-block active"><a href="{{ url('/calc') }} "style="color: rgb(0,0,0)">Kalkulatory</a></button>
                </div>       
         </div> 
         </div>      

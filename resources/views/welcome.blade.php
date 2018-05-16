@@ -95,13 +95,14 @@
 
                 <div class="links">
 
-                    <a href="{{ url('/home') }}">Home</a>
-                    <a href="https://kfd.pl">Trening</a>
-                    <a href="https://magdagessler.pl">Diety</a>
-                    <a href="https://filmweb.pl">Filmy</a>
-                    <a href="https://github.com/laravel/laravel">Zdjęcia</a>
+                  
 
-                   
+            <a href="{{ url('/') }}">Home</a>
+            <a href="https://kfd.pl">Trening</a>
+            <a href="https://magdagessler.pl">Diety</a>
+            <a href="{{ url('/gallery') }}">Galeria</a>
+            <a href="{{ url('/calc') }}">Kalkulatory</a>
+              
                 </div>
 
             </div>
