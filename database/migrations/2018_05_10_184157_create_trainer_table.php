@@ -19,7 +19,7 @@ class CreateTrainerTable extends Migration
             $table->string('last_name');
             $table->string('experience_as_trainer');
             $table->string('certificate');
-            $table->timestamps();
+           
         });
     }
 

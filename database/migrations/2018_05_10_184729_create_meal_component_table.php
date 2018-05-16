@@ -18,7 +18,7 @@ class CreateMealComponentTable extends Migration
             $table->integer('meals_id')->unsigned();
             $table->integer('components_id')->unsigned();
         
-            $table->timestamps();
+            
         });
         Schema::table('meal_components', function (Blueprint $table) {
             $table->foreign('meals_id')->references('id')->on('meals');

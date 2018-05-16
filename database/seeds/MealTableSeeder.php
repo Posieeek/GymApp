@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Meals;
+use App\Meal;
 
 class MealTableSeeder extends Seeder
 {
@@ -12,7 +12,7 @@ class MealTableSeeder extends Seeder
      */
     public function run()
     {
-        $meals = Meals::create([
+        DB::table('meals')->insert([
             'id' => '1',
             'name' => 'kurczaczek z woda',
             'calories' => '80',
@@ -21,8 +21,7 @@ class MealTableSeeder extends Seeder
             'proteins' => '20',
          
         ]);
-        $meals->save();
-        $meals = Meals::all();
+        
         //
     }
 }

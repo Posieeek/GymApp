@@ -20,7 +20,7 @@ class CreateMealTable extends Migration
             $table->integer('carbohydrates');
             $table->integer('fat');
             $table->integer('proteins');
-            $table->timestamps();
+           
         });
     }
 

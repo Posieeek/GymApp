@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Training_Exercises;
+use App\Training_Exercise;
 
 class Training_ExerciseTableSeeder extends Seeder
 {
@@ -12,14 +12,12 @@ class Training_ExerciseTableSeeder extends Seeder
      */
     public function run()
     {
-        $training_exercises = Training_Exercises::create([
+        DB::table('training_exercises')->insert([
             'id' => '1',
             'trainings_id' => '1',
             'exercises_id' => '1',
         ]);
-        $training_exercises->save();
-
-        $Training_Exercises = Training_Exercises::all();
+     
         //
     }
 }

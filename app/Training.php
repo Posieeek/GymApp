@@ -5,26 +5,25 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
-class Trainers extends Model
+
+
+class Training extends Model
 {
-
-    use Notifiable;
-
-    /**
+     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
        
-        'id' ,
+        'id',
         'name' ,
-        'last_name',
-        'experience_as_trainer' ,
-        'certificate' ,
-   
+
     
     ];
+    public function Training_Exercise()
+    {
+        return $this->belongsTo('App\Training_Exercise');
+    }
     //
 }
-

@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
-class Components extends Model
+class Diet extends Model
 {
     use Notifiable;
 
@@ -17,15 +17,13 @@ class Components extends Model
     protected $fillable = [
        
         'id' ,
-      'name',
-      'weight',
-    
+        'name' ,
+        'meal_id',
     ];
 
-    public function Meal_Components()
+    public function Meal()
     {
-        return $this->belongsTo('App\Meal_Components');
+        return $this->hasMany('App\Meal');
     }
+    //
 }
-
-

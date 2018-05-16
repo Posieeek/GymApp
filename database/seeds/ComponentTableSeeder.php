@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Components;
+use App\Component;
 
 class ComponentTableSeeder extends Seeder
 {
@@ -12,13 +12,12 @@ class ComponentTableSeeder extends Seeder
      */
     public function run()
     {
-        $components = Components::create([
+        DB::table('components')->insert([
             'id' => '1',
             'name' => 'kurczak',
             'weight' => '100',
         ]);
-        $components->save();
-        $components = Components::all();
+    
         //
     }
 }

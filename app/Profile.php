@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
-class Profiles extends Model
+class Profile extends Model
 {
 
     use Notifiable;
@@ -19,37 +19,37 @@ class Profiles extends Model
     protected $fillable = [
        
         'id' ,
-        'users_id',
+        'user_id',
         'name' ,
         'last_name',
         'height' ,
         'weight',
         'experience' ,
-        'trainers_id' ,
-        'diets_id' ,
-        'trainings_id',
+        'trainer_id' ,
+        'diet_id' ,
+        'training_id',
    
     
     ];
     //
-    public function Users()
+    public function User()
     {
-        return $this->hasOne('App\Users');
+        return $this->hasOne('App\User');
     }
 
-    public function Trainers()
+    public function Trainer()
     {
-        return $this->belongsTo('App\Trainers');
+        return $this->belongsTo('App\Trainer');
     }
 
-    public function Diets()
+    public function Diet()
     {
-        return $this->belongsTo('App\Diets');
+        return $this->belongsTo('App\Diet');
     }
 
-    public function Trainings()
+    public function Training()
     {
-        return $this->belongsTo('App\Trainings');
+        return $this->belongsTo('App\Training');
     }
 }
 

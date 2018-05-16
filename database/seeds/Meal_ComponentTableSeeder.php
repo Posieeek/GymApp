@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Meal_Components;
+use App\Meal_Component;
 
 class Meal_ComponentTableSeeder extends Seeder
 {
@@ -12,14 +12,12 @@ class Meal_ComponentTableSeeder extends Seeder
      */
     public function run()
     {
-        $meal_components = Meal_Components::create([
+        DB::table('meal_components')->insert([
             'id' => '1',
             'meals_id' => '1',
             'components_id' => '1',
         ]);
-        $meal_components->save();
-
-        $meal_components = Meal_Components::all();
+       
         //
     }
 }

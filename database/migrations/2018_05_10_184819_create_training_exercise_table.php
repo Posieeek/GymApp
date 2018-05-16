@@ -19,7 +19,7 @@ class CreateTrainingExerciseTable extends Migration
             $table->integer('exercises_id')->unsigned();
             $table->foreign('trainings_id')->references('id')->on('trainings');
             $table->foreign('exercises_id')->references('id')->on('exercises');
-            $table->timestamps();
+            
         });
     }
 

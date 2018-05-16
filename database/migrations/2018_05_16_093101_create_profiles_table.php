@@ -25,7 +25,7 @@ class CreateProfilesTable extends Migration
             $table->integer('trainers_id')->unsigned();
             $table->integer('diets_id')->unsigned();
             $table->integer('trainings_id')->unsigned();
-            $table->timestamps();
+       
             
         });
 

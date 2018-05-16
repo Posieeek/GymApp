@@ -18,7 +18,7 @@ class CreateDietTable extends Migration
             $table->string('name');
             $table->integer('meals_id')->unsigned();
             $table->foreign('meals_id')->references('id')->on('meals');
-            $table->timestamps();
+            
         });
     }
 

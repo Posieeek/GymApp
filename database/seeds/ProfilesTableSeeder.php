@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Profiles;
+use App\Profile;
 
 class ProfilesTableSeeder extends Seeder
 {
@@ -12,7 +12,7 @@ class ProfilesTableSeeder extends Seeder
      */
     public function run()
     {
-        $profiles = Profiles::create([
+        DB::table('profiles')->insert([
             'id' => '1',
             'users_id' => '1',
             'name' => 'Maciej',
@@ -24,9 +24,8 @@ class ProfilesTableSeeder extends Seeder
             'diets_id' => '1',
             'trainings_id' => '1',
         ]);
-        $profiles->save();
+     
 
-        $profiles = Profiles::all();
         //
     }
 }

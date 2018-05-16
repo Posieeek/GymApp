@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Trainings;
+use App\Training;
 
 class TrainingTableSeeder extends Seeder
 {
@@ -12,14 +12,12 @@ class TrainingTableSeeder extends Seeder
      */
     public function run()
     {
-        $trainings = Trainings::create([
+        DB::table('trainings')->insert([
             'id' => '1',
             'name' => 'Damiana',
            
         ]);
-        $trainings->save();
-
-        $trainings = Trainings::all();
+        
         //
     }
 }

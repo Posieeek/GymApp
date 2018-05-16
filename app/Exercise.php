@@ -5,9 +5,8 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
-class Meals extends Model
+class Exercise extends Model
 {
-
     use Notifiable;
 
     /**
@@ -19,14 +18,14 @@ class Meals extends Model
        
         'id' ,
       'name',
-      'calories',
-      'carbohydrates',
-      'fat',
-      'proteins',
+      'weight',
+      'ex_set',
+      'rep',
     ];
-    public function Meal_Components()
+    public function Training_Exercise()
     {
-        return $this->belongsTo('App\Meal_Components');
+        return $this->belongsTo('App\Training_Exercise');
     }
 }
+
 

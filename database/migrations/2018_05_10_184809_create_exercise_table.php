@@ -19,7 +19,7 @@ class CreateExerciseTable extends Migration
             $table->integer('weight');
             $table->integer('ex_set');
             $table->integer('rep');
-            $table->timestamps();
+            
         });
     }
 

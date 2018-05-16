@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Diets;
+use App\Diet;
 
 class DietTableSeeder extends Seeder
 {
@@ -12,14 +12,12 @@ class DietTableSeeder extends Seeder
      */
     public function run()
     {
-        $diets = Diets::create([
+        DB::table('diets')->insert([
             'id' => '1',
             'name' => 'Kurczokowa dieto',
             'meals_id' => '1',
         ]);
-        $diets->save();
-    
-        $diets = Diets::all();
+       
         //
     }
 }
