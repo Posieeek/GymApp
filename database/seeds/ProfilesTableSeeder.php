@@ -25,18 +25,7 @@ class ProfilesTableSeeder extends Seeder
             'trainings_id' => '1',
         ]);
 
-        DB::table('profiles')->insert([
-            'id' => '2',
-            'users_id' => '2',
-            'name' => 'Maciej',
-            'last_name' => 'Zawadzki',
-            'height' => '172',
-            'weight' => '71',
-            'experience' => '4 years',
-            'trainers_id' => '1',
-            'diets_id' => '1',
-            'trainings_id' => '1',
-        ]);
+     
      
 
         //

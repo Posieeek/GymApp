@@ -26,3 +26,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/calc', 'HomeController@calc')->name('calc');
 
 Route::get('/gallery', 'HomeController@gallery')->name('gallery');
+
+Route::get('/diet', 'HomeController@diet')->name('diet');
+
+Route::get('/training', 'HomeController@training')->name('training');

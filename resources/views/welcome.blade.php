@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
+   
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,14 +12,14 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <style>
+        
             html, body {
-                text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
                       background: url("bac.jpg");
                 background-color: #a1a8e6;
                 color: #ffffff;
                 font-family: 'Raleway', sans-serif;
-                font-weight: 100;
                 height: 100%;
                 margin: 0;
                 background-position: center;
@@ -48,11 +49,16 @@
             }
 
             .content {
-               
+                text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
                 text-align: center;
+                font-family: 'Raleway', sans-serif;
+                font-weight: 500;
+                font-size: 18px;
+                color: #dddddd;
             }
 
             .title {
+                text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
                 align-items: center;
                 text-align: center;
                 margin-top: 5px;
@@ -76,40 +82,96 @@
                 margin-bottom: 30px;
             }
         </style>
+         <nav class="navbar  navbar-light navbar-laravel navbar-left ">
+            <div class="container">
+                <a class="navbar-brand" href="{{ url('/') }}"> 
+              
+                    {{ config('Home', 'Home') }}
+                    </a>
+                    <a class="navbar-brand" href="{{ url('/training') }}"> 
+                    {{ config('Trening', 'Trening') }}
+                    </a>
+
+                     <a class="navbar-brand" href="{{ url('/diet') }}"> 
+                    {{ config('Diety', 'Diety') }}
+                    </a>
+
+                    <a class="navbar-brand" href="{{ url('/gallery') }}"> 
+                    {{ config('Galeria', 'Galeria') }}
+                    </a>
+
+                    <a class="navbar-brand" href="{{ url('/calc') }}"> 
+                    {{ config('Kalkulatory', 'Kalkulatory') }}
+                    </a>
+
+            @if (Route::has('login'))
+               
+                    @auth
+                    <a class="navbar-brand" href="{{ url('/home') }}"> 
+                    {{ config('Profil', 'Profil') }}
+                        </a>
+                    @endauth
+                
+            @endif
+        
+            @guest
+                            <a class="navbar-brand" href="{{ route('login') }}">{{ __('Logowanie') }}</a>
+                            <a class="navbar-brand" href="{{ route('register') }}">{{ __('Rejestracja') }}</a>
+                        @else
+                            <a class="navbar-brand">
+                                <a id="navbar-brand" class="navbar-brand" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+                                    <a class="navbar-brand" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Wyloguj') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                              
+                            </a>
+                        @endguest
+
+               
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="navbar-nav mr-auto">
+
+                    </ul>
+
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav mr-auto ">
+                        <!-- Authentication Links -->
+                       
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Domek</a>
-                    @else
-                        <a href="{{ route('login') }}">Logowanie</a>
-                        <a href="{{ route('register') }}">Rejestracja</a>
-                    @endauth
+    
+   
+        <div class="title m-b-md">
+                   ROBIMY KLATĘ
                 </div>
-            @endif
-            
             <div class="content">
-                
-
-                <div class="links">
-
-                  
-
-            <a href="{{ url('/') }}">Home</a>
-            <a href="https://kfd.pl">Trening</a>
-            <a href="https://magdagessler.pl">Diety</a>
-            <a href="{{ url('/gallery') }}">Galeria</a>
-            <a href="{{ url('/calc') }}">Kalkulatory</a>
-              
-                </div>
-
+                DZISIAJ KLATA
+                Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle 
+                <br>
+                poligraficznym. Został po raz pierwszy użyty w XV w. przez nieznanego drukarza   <br>
+                do wypełnienia tekstem próbnej książki. Pięć wieków później zaczął być używany   <br>
+                przemyśle elektronicznym, pozostając praktycznie niezmienionym. Spopularyzował   <br>
+                się w latach 60. XX w. wraz z publikacją arkuszy Letrasetu, zawierających fragmenty   <br>
+                Lorem Ipsum, a ostatnio z zawierającym różne wersje Lorem Ipsum oprogramowaniem   <br>
+                przeznaczonym do realizacji druków na komputerach osobistych, jak Aldus PageMaker
+    
             </div>
 
         </div>
-         <div class="title m-b-md">
-                   Lorem ipsum
-                </div>
+         
     </body>
 </html>

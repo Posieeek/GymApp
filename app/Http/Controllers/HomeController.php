@@ -35,5 +35,15 @@ class HomeController extends Controller
     {
         return view('gallery');
     }
+
+    public function diet()
+    {
+        return view('diet');
+    }
+
+    public function training()
+    {
+        return view('training');
+    }
     
 }
