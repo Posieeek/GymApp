@@ -25,12 +25,12 @@ class Training_Exercise extends Model
 
     public function Training()
     {
-        return $this->hasMany('App\Training',  'foreign_key');
+        return $this->hasMany('App\Training');
     }
 
     public function Exercise()
     {
-        return $this->hasMany('App\Exercise',  'foreign_key');
+        return $this->hasMany('App\Exercise');
     }
     //
 }

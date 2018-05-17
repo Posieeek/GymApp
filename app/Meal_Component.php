@@ -23,12 +23,12 @@ class Meal_Component extends Model
 
     public function components()
     {
-        return $this->hasMany('App\Component',  'foreign_key');
+        return $this->hasMany('App\Component');
     }
 
     public function meals()
     {
-        return $this->hasMany('App\Meal',  'foreign_key');
+        return $this->hasMany('App\Meal');
     }
 
 

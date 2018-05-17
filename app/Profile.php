@@ -39,7 +39,7 @@ class Profile extends Model
 
     public function Trainer()
     {
-        return $this->belongsTo('App\Trainer');
+        return $this->hasOne('App\Trainer');
     }
 
     public function Diet()

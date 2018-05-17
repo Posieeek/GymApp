@@ -13,15 +13,16 @@ class ComponentTableSeeder extends Seeder
      */
     public function run()
     {
-
+        $faker = Faker::create('App\Component');
+        for($i = 1; $i <= 10; $i ++)
+        {
         DB::table('components')->insert([
-            'id' => '1',
-            'name' => 'Kurczok',
-            'weight' => '100',
+            'name' => $faker->word(),
+            'weight' => $faker->numberBetween($min = 10, $max = 900),
         ]);
 
         
-    
+        }
         //
     }
 }

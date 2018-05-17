@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Training;
+use Faker\Factory as Faker;
 
 class TrainingTableSeeder extends Seeder
 {
@@ -12,12 +13,17 @@ class TrainingTableSeeder extends Seeder
      */
     public function run()
     {
+        $faker = Faker::create('App\Training');
+        for($i = 1; $i <= 10; $i ++)
+        {
         DB::table('trainings')->insert([
-            'id' => '1',
-            'name' => 'Damiana',
+           // 'id' => '1',
+            //'name' => 'Damiana',
            
+            'name' => $faker->word(),
         ]);
         
         //
     }
+}
 }

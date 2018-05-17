@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Meal_Component;
+use Faker\Factory as Faker;
 
 class Meal_ComponentTableSeeder extends Seeder
 {
@@ -12,12 +13,16 @@ class Meal_ComponentTableSeeder extends Seeder
      */
     public function run()
     {
+        $faker = Faker::create('App\Diet');
+        for($i = 1; $i <= 20; $i ++)
+        {
         DB::table('meal_components')->insert([
-            'id' => '1',
-            'meals_id' => '1',
-            'components_id' => '1',
+            
+            'meals_id' => $faker->numberBetween($min = 1, $max = 10),
+            'components_id' => $faker->numberBetween($min = 1, $max = 10),
         ]);
        
         //
     }
+}
 }

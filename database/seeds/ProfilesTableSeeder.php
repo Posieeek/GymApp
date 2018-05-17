@@ -2,6 +2,10 @@
 
 use Illuminate\Database\Seeder;
 use App\Profile;
+use App\Training;
+use App\Trainer;
+use App\Diet;
+use Faker\Factory as Faker;
 
 class ProfilesTableSeeder extends Seeder
 {
@@ -12,8 +16,11 @@ class ProfilesTableSeeder extends Seeder
      */
     public function run()
     {
+        $faker = Faker::create('App\Profile');
+        for($i = 1; $i <= 10; $i ++)
+        {
         DB::table('profiles')->insert([
-            'id' => '1',
+         /*   'id' => '1',
             'users_id' => '1',
             'name' => 'Maciej',
             'last_name' => 'Zawadzki',
@@ -23,11 +30,24 @@ class ProfilesTableSeeder extends Seeder
             'trainers_id' => '1',
             'diets_id' => '1',
             'trainings_id' => '1',
+            */
+
+            'name' => $faker->name(),
+            'last_name' => $faker->lastName(),
+            'height' => $faker->numberBetween($min = 150, $max = 210),
+            'weight' => $faker->numberBetween($min = 50, $max = 120),
+            'experience' => $faker->randomDigit." years",
+            'users_id' => $faker->unique()->numberBetween($min = 1, $max = 10),
+            'trainers_id' => Trainer::all()->random()->id,
+            'diets_id' => '1',
+            'trainings_id' => '1',
+            
+
         ]);
 
      
      
-
+        }
         //
     }
 }
