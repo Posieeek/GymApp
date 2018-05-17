@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class TrainingController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -21,50 +21,34 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('home');
-    }
-
-    public function calc()
-    {
-        return view('calc');
-    }
-
-    public function gallery()
-    {
-        return view('gallery');
-    }
-
-    public function diet()
-    {
-        return view('diet');
-    }
-
-    public function training()
+  
+      public function training()
     {
         return view('training');
     }
     
     public function split()
     {
-        return view('split');
+        return view('/training/split');
     }
 
     public function fbw()
     {
-        return view('fbw');
+        return view('/training/fbw');
     }
 
     public function pushpull()
     {
-        return view('pushpull');
+        return view('/training/pushpull');
     }
 
     public function pplegs()
     {
-        return view('pplegs');
+        return view('/training/pplegs');
     }
-
+    public function podwyskok()
+    {
+        return view('/training/podwyskok');
+    }
 
 }

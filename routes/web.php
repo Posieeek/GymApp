@@ -11,6 +11,8 @@
 |
 */
 
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -29,4 +31,9 @@ Route::get('/gallery', 'HomeController@gallery')->name('gallery');
 
 Route::get('/diet', 'HomeController@diet')->name('diet');
 
-Route::get('/training', 'HomeController@training')->name('training');
+Route::get('/training', 'TrainingController@training')->name('training');
+Route::get('/training/split', 'TrainingController@split')->name('split');
+Route::get('/training/fbw', 'TrainingController@fbw')->name('fbw');
+Route::get('/training/pushpull', 'TrainingController@pushpull')->name('pushpull');
+Route::get('/training/podwyskok', 'TrainingController@podwyskok')->name('podwyskok');
+Route::get('/training/pplegs', 'TrainingController@pplegs')->name('pplegs');
