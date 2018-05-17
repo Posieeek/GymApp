@@ -41,30 +41,22 @@ class HomeController extends Controller
         return view('diet');
     }
 
-    public function training()
-    {
-        return view('training');
-    }
     
-    public function split()
+
+    public function highcarb()
     {
-        return view('split');
+        return view('/diet/highcarb');
     }
 
-    public function fbw()
+    public function lowcarb()
     {
-        return view('fbw');
+        return view('/diet/lowcarb');
     }
 
-    public function pushpull()
+    public function vegan()
     {
-        return view('pushpull');
+        return view('/diet/vegan');
     }
 
-    public function pplegs()
-    {
-        return view('pplegs');
-    }
-
-
+ 
 }

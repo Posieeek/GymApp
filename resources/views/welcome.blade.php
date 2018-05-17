@@ -26,7 +26,15 @@
     background-repeat: no-repeat;
     background-size: cover;
             }
-
+            .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+   
+    color: white;
+    text-align: center;
+}
             .full-height {
                 height: 10vh;
             }
@@ -54,7 +62,7 @@
                 font-family: 'Raleway', sans-serif;
                 font-weight: 500;
                 font-size: 18px;
-                color: #dddddd;
+                color: #ffffff;
             }
 
             .title {
@@ -156,10 +164,10 @@
     
    
         <div class="title m-b-md">
-                   ROBIMY KLATĘ
+                   Gym App
                 </div>
             <div class="content">
-                DZISIAJ KLATA
+               
                 Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle 
                 <br>
                 poligraficznym. Został po raz pierwszy użyty w XV w. przez nieznanego drukarza   <br>
@@ -172,6 +180,8 @@
             </div>
 
         </div>
-         
+        <div class="footer">
+  <p>Maciej Zawadzki, Zaawansowane aplikacje internetowe</p>
+</div>
     </body>
 </html>

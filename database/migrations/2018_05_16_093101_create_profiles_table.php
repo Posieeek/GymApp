@@ -30,9 +30,9 @@ class CreateProfilesTable extends Migration
         });
 
         Schema::table('profiles', function (Blueprint $table) {
-            $table->foreign('trainers_id')->references('id')->on('profiles');
-            $table->foreign('diets_id')->references('id')->on('profiles');
-            $table->foreign('trainings_id')->references('id')->on('profiles');
+            $table->foreign('trainers_id')->references('id')->on('trainers');
+            $table->foreign('diets_id')->references('id')->on('diets');
+            $table->foreign('trainings_id')->references('id')->on('trainings');
            
             
     });
