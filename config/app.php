@@ -12,6 +12,15 @@ return [
     | any other location as required by the application or its packages.
     |
     */
+    'providers' => [
+
+       
+    
+        Collective\Html\HtmlServiceProvider::class,
+    
+    ],
+    
+   
 
     'name' => env('APP_NAME', 'Laravel'),
 
