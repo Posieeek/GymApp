@@ -15,10 +15,10 @@ class CreateTrainingExerciseTable extends Migration
     {
         Schema::create('training_exercises', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('trainings_id')->unsigned();
-            $table->integer('exercises_id')->unsigned();
-            $table->foreign('trainings_id')->references('id')->on('trainings');
-            $table->foreign('exercises_id')->references('id')->on('exercises');
+            $table->integer('training_id')->unsigned();
+            $table->integer('exercise_id')->unsigned();
+            $table->foreign('training_id')->references('id')->on('trainings');
+            $table->foreign('exercise_id')->references('id')->on('exercises');
             
         });
     }

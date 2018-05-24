@@ -16,8 +16,8 @@ class CreateDietTable extends Migration
         Schema::create('diets', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('meals_id')->unsigned();
-            $table->foreign('meals_id')->references('id')->on('meals');
+            $table->integer('meal_id')->unsigned();
+            $table->foreign('meal_id')->references('id')->on('meals');
             
         });
     }

@@ -19,7 +19,6 @@ class Profile extends Model
     protected $fillable = [
        
         'id' ,
-        'user_id',
         'name' ,
         'last_name',
         'height' ,
@@ -27,14 +26,18 @@ class Profile extends Model
         'experience' ,
         'trainer_id' ,
         'diet_id' ,
+        'user_id',
         'training_id',
-   
+        'created_at',
+        'updated_at',
     
     ];
+
+    
     //
     public function User()
     {
-        return $this->hasOne('App\User');
+        return $this->belongsTo('App\User');
     }
 
     public function Trainer()
