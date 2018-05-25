@@ -42,7 +42,5 @@ Route::get('/training/pushpull', 'TrainingController@pushpull')->name('pushpull'
 Route::get('/training/podwyskok', 'TrainingController@podwyskok')->name('podwyskok');
 Route::get('/training/pplegs', 'TrainingController@pplegs')->name('pplegs');
 Route::get('/training/fbw', 'TrainingController@fbw')->name('fbw');
-Route::get('/training/fbw', 'TrainingController@fbw')->name('fbw');
-Route::get('/training/fbw', 'TrainingController@fbw')->name('fbw');
 Route::resource('exercises','ExerciseController');
 Route::resource('profiles','ProfileController');
