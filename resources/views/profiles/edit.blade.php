@@ -26,7 +26,7 @@
     @endif
 
 
-    {!! Form::model($profiles, ['method' => 'PATCH','route' => ['profiles.update', $profile->id]]) !!}
+    {!! Form::model($profile, ['method' => 'PATCH','route' => ['profiles.update', $profile->id]]) !!}
         @include('profiles.form')
     {!! Form::close() !!}
 
