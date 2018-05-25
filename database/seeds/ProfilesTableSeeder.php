@@ -37,10 +37,10 @@ class ProfilesTableSeeder extends Seeder
             'height' => $faker->numberBetween($min = 150, $max = 210),
             'weight' => $faker->numberBetween($min = 50, $max = 120),
             'experience' => $faker->randomDigit." years",
-            'users_id' => $i,
-            'trainers_id' => Trainer::all()->random()->id,
-            'diets_id' => Diet::all()->random()->id,
-            'trainings_id' => Training::all()->random()->id,
+            'user_id' => $i,
+            'trainer_id' => Trainer::all()->random()->id,
+            'diet_id' => Diet::all()->random()->id,
+            'training_id' => Training::all()->random()->id,
             
 
         ]);

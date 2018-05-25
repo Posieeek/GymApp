@@ -20,8 +20,8 @@ class Training_ExerciseTableSeeder extends Seeder
            /* 'id' => '1',
             'trainings_id' => '1',
             'exercises_id' => '1', */
-        'trainings_id' => $faker->numberBetween($min = 1, $max = 10),
-            'exercises_id' => $faker->numberBetween($min = 1, $max = 10),
+        'training_id' => $faker->numberBetween($min = 1, $max = 10),
+            'exercise_id' => $faker->numberBetween($min = 1, $max = 10),
        
             ]);
      

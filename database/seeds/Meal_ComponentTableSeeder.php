@@ -18,8 +18,8 @@ class Meal_ComponentTableSeeder extends Seeder
         {
         DB::table('meal_components')->insert([
             
-            'meals_id' => $faker->numberBetween($min = 1, $max = 10),
-            'components_id' => $faker->numberBetween($min = 1, $max = 10),
+            'meal_id' => $faker->numberBetween($min = 1, $max = 10),
+            'component_id' => $faker->numberBetween($min = 1, $max = 10),
         ]);
        
         //

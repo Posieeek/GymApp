@@ -41,6 +41,10 @@ class HomeController extends Controller
         return view('diet');
     }
 
+    public function profile()
+    {
+        return view('profile');
+    }
     
 
     public function highcarb()

@@ -19,7 +19,7 @@ class DietTableSeeder extends Seeder
         DB::table('diets')->insert([
           
             'name' => $faker->word(),
-            'meals_id' => $faker->numberBetween($min = 1, $max = 10),
+            'meal_id' => $faker->numberBetween($min = 1, $max = 10),
             
         ]);
        

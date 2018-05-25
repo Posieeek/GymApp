@@ -24,7 +24,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('/profile', 'HomeController@profile')->name('profile');
 Route::get('/calc', 'HomeController@calc')->name('calc');
 
 Route::get('/gallery', 'HomeController@gallery')->name('gallery');

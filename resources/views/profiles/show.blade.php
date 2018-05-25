@@ -2,6 +2,8 @@
 
 
 @section('content')
+
+
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
@@ -11,7 +13,9 @@
                 <a class="btn btn-primary" href="{{ route('profiles.index') }}"> Back</a>
             </div>
         </div>
-    </div>
+    </div> 
+    
+  
 
  <table class="table table-striped  table-dark">
            <tr>

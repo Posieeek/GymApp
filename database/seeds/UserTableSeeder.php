@@ -27,7 +27,6 @@ class UserTableSeeder extends Seeder
             DB::table('users')->insert([
             'email' => $faker->freeEmail(),
             'password' => Hash::make($faker->password()),
-            'profiles_id' => $i,
             'remember_token' => str_random(10),
             'updated_at' => \Carbon\Carbon::now(),
             'created_at' => \Carbon\Carbon::now(),
