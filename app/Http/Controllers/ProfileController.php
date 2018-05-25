@@ -95,9 +95,8 @@ class ProfileController extends Controller
         request()->validate([
             'user_id',
             'name' => 'required',
-            'weight' => 'required',
-            'ex_set' => 'required',
-            'rep' => 'required',
+            'weight' => 'required|numeric',
+            'height' => 'required|numeric'
         ]);
         Profile::find($id)->update($request->all());
         return redirect()->route('profiles.index')

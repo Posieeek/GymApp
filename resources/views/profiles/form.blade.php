@@ -14,7 +14,7 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Height:</strong>
-            {!! Form::text('weight', null, array('placeholder' => 'Height','class' => 'form-control')) !!}
+            {!! Form::text('height', null, array('placeholder' => 'Height','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
