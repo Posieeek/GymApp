@@ -2,16 +2,6 @@
 
 
 @section('content')
-    <div class="row">
-        <div class="col-sm-8 ">
-            <div class="pull-left">
-                <h2>Profil</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('profiles.create') }}"> Uzupełnij profil</a>
-            </div>
-        </div>
-    </div>
 
 
     @if ($message = Session::get('success'))
@@ -20,52 +10,141 @@
         </div>
     @endif
 
-
-    <table class="table table-striped  table-dark">
-        <tr class="bg-primary">
-        <th> Avatar </th>
-            <th>Imie</th>
-            <th>Nazwisko</th>
-            <th>Wzrost</th>
-            <th>Waga </th>
-            <th>Doswiadczenie</th>
-            <th>Trener </th>
-            <th>Dieta </th>
-            <th>Trening </th>
-            <th width="280px">Action</th>
-        </tr>
       
     @foreach ($profiles as $profile)
     @if(Auth::id()  == $profile->id)
-    <tr>
-    <td> </td>
-        <td>{{ $profile->name}}</td>
-        <td>{{ $profile->last_name}}</td>
-        <td>{{ $profile->height}}</td>
-        <td>{{ $profile->weight}}</td>
-        <td>{{ $profile->experience}}</td>
-        <td>{{$profile->trainer_id}}</td>
-        <td>{{$profile->diet_id}}</td>
-        <td>{{$profile->training_id}}</td>
-        
-        
-        <td>
-            <a class="btn btn-info" href="{{ route('profiles.show',$profile->id) }}">Pokaż</a>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                Twój profil:
+                </div>
+                <div class="card-body">
+
+  <div class="form-group row">
+                            <label for="imie" class="col-sm-4 col-form-label text-md-right">{{ __('Avatar:') }}</label>
+                            <div class="col-md-6">
+                            <table class="table table-striped  table-dark">
+        <tr class="bg-primary">
+        <th>{{ $profile->name}} </th>
+    
+                             
+                                </table>
+                            </div>
+                        </div>      
+
+                             <div class="form-group row">
+                            <label for="imie" class="col-sm-4 col-form-label text-md-right">{{ __('Imię:') }}</label>
+                            <div class="col-md-6">
+                            <table class="table table-striped  table-dark">
+        <tr class="bg-primary">
+        <th>{{ $profile->name}} </th>
+    
+                             
+                                </table>
+                            </div>
+                        </div>      
+
+                         <div class="form-group row">
+                            <label for="imie" class="col-sm-4 col-form-label text-md-right">{{ __('Nazwisko:') }}</label>
+                            <div class="col-md-6">
+                            <table class="table table-striped  table-dark">
+        <tr class="bg-primary">
+        <th>{{ $profile->last_name}} </th>
+    
+                             
+                                </table>
+                            </div>
+                        </div>    
+
+                           <div class="form-group row">
+                            <label for="imie" class="col-sm-4 col-form-label text-md-right">{{ __('Wzrost:') }}</label>
+                            <div class="col-md-6">
+                            <table class="table table-striped  table-dark">
+        <tr class="bg-primary">
+        <th>{{ $profile->height}} </th>
+    
+                             
+                                </table>
+                            </div>
+                        </div>   
+
+                              <div class="form-group row">
+                            <label for="imie" class="col-sm-4 col-form-label text-md-right">{{ __('Waga:') }}</label>
+                            <div class="col-md-6">
+                            <table class="table table-striped  table-dark">
+        <tr class="bg-primary">
+        <th>{{ $profile->weight}} </th>
+    
+                             
+                                </table>
+                            </div>
+                        </div>   
+
+                              <div class="form-group row">
+                            <label for="imie" class="col-sm-4 col-form-label text-md-right">{{ __('Doświadczenie:') }}</label>
+                            <div class="col-md-6">
+                            <table class="table table-striped  table-dark">
+        <tr class="bg-primary">
+        <th>{{ $profile->experience}} </th>
+    
+                             
+                                </table>
+                            </div>
+                        </div>   
+                        <div class="form-group row">
+                            <label for="imie" class="col-sm-4 col-form-label text-md-right">{{ __('Dieta:') }}</label>
+                            <div class="col-md-6">
+                            <table class="table table-striped  table-dark">
+        <tr class="bg-primary">
+        <th>{{ $profile->diet_name}} </th>
+    
+                             
+                                </table>
+                            </div>
+                        </div>  
+
+  <div class="form-group row">
+                            <label for="imie" class="col-sm-4 col-form-label text-md-right">{{ __('Trening:') }}</label>
+                            <div class="col-md-6">
+                            <table class="table table-striped  table-dark">
+        <tr class="bg-primary">
+        <th>{{ $profile->training_name}} </th>
+    
+                             
+                                </table>
+                            </div>
+                        </div>  
+                        
           
-          
-                        <a href="{{ route('profiles.edit',$profile->id) }}" class="btn brn-lg btn-primary"
-                           style="margin-bottom: 8px;">Edytuj Profil</a>
-                           {!! Form::open(['method' => 'DELETE','route' => ['profiles.destroy', $profile->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-            {!! Form::close() !!}
-                  
-           
-        </td>
-    </tr>
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label text-md-right">{{ __('') }}</label>
+                            <div class="col-md-6">
+                            <table class="table table-striped  table-dark">
+        <tr class="bg-primary">
+          <a href="{{ route('profiles.edit',$profile->id) }}" class="btn brn-lg btn-primary"
+             style="margin-right: 8px;">Edytuj Profil</a>
+             {!! Form::open(['method' => 'DELETE','route' => ['profiles.destroy', $profile->id],'style'=>'display:inline']) !!}
+{!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+{!! Form::close() !!}
+                             
+    </table>
+</div>
+</div>  
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
     @endif
     @endforeach
    
-    </table>
+
 
   
 

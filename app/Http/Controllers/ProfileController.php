@@ -18,9 +18,9 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        $profiles = Profile::latest()->paginate(5);
+        $profiles = Profile::latest()->paginate(0);
         return view('profiles.index',compact('profiles'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+            ->with('i', (request()->input('page', 1) - 1) * 5);       
     }
 
 
@@ -50,8 +50,11 @@ class ProfileController extends Controller
             'height' => 'required',
             'weight'=> 'required',
             'experience' => 'required',
+            'diet_id',
+            'training_id'
         
         ]);
+       
         Profile::update($request->all());
         return redirect()->route('profiles.index')
                         ->with('success','profiles created successfully');

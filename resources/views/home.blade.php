@@ -14,8 +14,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    Jesteś zalogowany!    
-                               
+                    Jesteś zalogowany!   
+
+                    <button type="button" class="btn btn-block active"><a href="{{ url('/profiles') }}"style="color: rgb(0,0,0)">Twój profil:</a></button>   
                 </div>   
             </div>
             <br>

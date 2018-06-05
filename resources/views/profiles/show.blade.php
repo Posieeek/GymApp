@@ -24,12 +24,17 @@
             <th>     <strong>Wzrost:</strong></th>
             <th>     <strong>Waga:</strong></th>
             <th>     <strong>Doswiadczenie:</strong></th>
+        
+            <th>Dieta </th>
+            <th>Trening </th>
             </tr>
             <td>{{ $profile->name}}</td>
         <td>{{ $profile->last_name}}</td>
         <td>{{ $profile->height}}</td>
         <td>{{ $profile->weight}}</td>
         <td>{{ $profile->experience}}</td>
+        <td>{{$profile->diet_name}}</td>
+        <td>{{$profile->training_name}}</td>
         </div>
     </div>
    

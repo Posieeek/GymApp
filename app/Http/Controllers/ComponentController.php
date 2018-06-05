@@ -61,7 +61,7 @@ class ComponentController extends Controller
     public function show($id)
     {
         $component = Component::find($id);
-        return view('components.show',compact('components'));
+        return view('components.show',compact('component'));
     }
 
 
@@ -74,7 +74,7 @@ class ComponentController extends Controller
     public function edit($id)
     {
         $component = Component::find($id);
-        return view('components.edit',compact('components'));
+        return view('components.edit',compact('component'));
     }
 
 
@@ -90,8 +90,7 @@ class ComponentController extends Controller
         request()->validate([
             'name' => 'required',
             'weight' => 'required',
-            'ex_set' => 'required',
-            'rep' => 'required',
+        
         ]);
         Component::find($id)->update($request->all());
         return redirect()->route('components.index')

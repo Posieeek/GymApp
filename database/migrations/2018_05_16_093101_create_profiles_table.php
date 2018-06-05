@@ -22,7 +22,7 @@ class CreateProfilesTable extends Migration
             $table->integer('weight')->nullable();
             $table->string('experience')->nullable();
             $table->timestamps();
-            $table->integer('trainer_id')->unsigned()->nullable();
+           
             $table->integer('diet_id')->unsigned()->nullable();
             $table->integer('training_id')->unsigned()->nullable();
        
@@ -30,7 +30,7 @@ class CreateProfilesTable extends Migration
         });
 
         Schema::table('profiles', function (Blueprint $table) {
-            $table->foreign('trainer_id')->references('id')->on('trainers');
+         
             $table->foreign('diet_id')->references('id')->on('diets');
             $table->foreign('training_id')->references('id')->on('trainings');
         

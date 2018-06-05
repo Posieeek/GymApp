@@ -44,3 +44,4 @@ Route::get('/training/pplegs', 'TrainingController@pplegs')->name('pplegs');
 Route::get('/training/fbw', 'TrainingController@fbw')->name('fbw');
 Route::resource('exercises','ExerciseController');
 Route::resource('profiles','ProfileController');
+Route::resource('components','ComponentController');

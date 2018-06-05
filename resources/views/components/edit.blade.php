@@ -1,12 +1,15 @@
-@extends('layouts.app')
+@extends('layout')
 
 
 @section('content')
     <div class="row">
-        <div class="col-lg-4 margin-tb">
-            <div class="pull-center">
+        <div class="col-lg-12 margin-tb">
+            <div class="pull-left">
+                <h2>Edituj cwiczenie</h2>
             </div>
-          
+            <div class="pull-right">
+                <a class="btn btn-primary" href="{{ route('components.index') }}"> Back</a>
+            </div>
         </div>
     </div>
 
@@ -23,8 +26,8 @@
     @endif
 
 
-    {!! Form::model($profile, ['method' => 'PATCH','route' => ['profiles.update', $profile->id]]) !!}
-        @include('profiles.form')
+    {!! Form::model($component, ['method' => 'PATCH','route' => ['components.update', $component->id]]) !!}
+        @include('components.form')
     {!! Form::close() !!}
 
 

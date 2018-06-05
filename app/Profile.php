@@ -24,7 +24,6 @@ class Profile extends Model
         'height' ,
         'weight',
         'experience' ,
-        'trainer_id' ,
         'diet_id' ,
         'user_id',
         'training_id',
@@ -35,15 +34,12 @@ class Profile extends Model
 
     
     //
+
     public function User()
     {
         return $this->belongsTo('App\User');
     }
 
-    public function Trainer()
-    {
-        return $this->hasOne('App\Trainer');
-    }
 
     public function Diet()
     {
@@ -54,5 +50,8 @@ class Profile extends Model
     {
         return $this->belongsTo('App\Training');
     }
+
+
+
 }
 
