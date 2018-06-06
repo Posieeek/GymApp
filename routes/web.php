@@ -25,7 +25,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile', 'HomeController@profile')->name('profile');
-Route::get('/calc', 'HomeController@calc')->name('calc');
+
 
 Route::get('/gallery', 'HomeController@gallery')->name('gallery');
 
@@ -34,7 +34,11 @@ Route::get('/diet/highcarb', 'HomeController@highcarb')->name('highcarb');
 Route::get('/diet/lowcarb', 'HomeController@lowcarb')->name('lowcarb');
 Route::get('/diet/vegan', 'HomeController@vegan')->name('vegan');
 
-
+Route::get('/calc', 'CalcController@calc')->name('calc');
+Route::get('/calc/orm', 'CalcController@orm')->name('orm');
+Route::get('/calc/bench', 'CalcController@bench')->name('bench');
+Route::get('/calc/deadlift', 'CalcController@deadlift')->name('deadlift');
+Route::get('/calc/squat', 'CalcController@squat')->name('squat');
 Route::get('/training', 'TrainingController@training')->name('training');
 Route::get('/training/split', 'TrainingController@split')->name('split');
 Route::get('/training/fbw', 'TrainingController@fbw')->name('fbw');
