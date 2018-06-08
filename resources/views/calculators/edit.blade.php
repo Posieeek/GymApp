@@ -5,27 +5,29 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Uzupełnij calc</h2>
+                <h2>Edituj cwiczenie</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('calcs.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('calculators.index') }}"> Back</a>
             </div>
         </div>
     </div>
 
 
-    @if (count($errors) < 0)
+    @if (count($errors) > 0)
         <div class="alert alert-danger">
             <strong>Whoops!</strong> There were some problems with your input.<br><br>
             <ul>
-              
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
             </ul>
         </div>
     @endif
 
 
-    {!! Form::open(array('route' => 'calcs.store','method'=>'POST')) !!}
-         @include('calcs.form')
+    {!! Form::model($calc, ['method' => 'PATCH','route' => ['calculators.update', $calculator->id]]) !!}
+        @include('calculators.form')
     {!! Form::close() !!}
 
 
