@@ -5,10 +5,10 @@
     <div class="row">
         <div class="col-sm-8 ">
             <div class="pull-left">
-                <h2>Dziennik cwiczen</h2>
+                <h2>Lista produktów</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('components.create') }}"> Dodaj cwiczenie</a>
+                <a class="btn btn-success" href="{{ route('components.create') }}"> Dodaj produkt</a>
             </div>
         </div>
     </div>

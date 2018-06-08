@@ -15,8 +15,10 @@ class CreateCalculatorTable extends Migration
     {
         Schema::create('calculators', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
             $table->integer('weight');
             $table->integer('rep');
+            $table->double('max_rep')->unsigned()->nullable();
             $table->timestamps();
         
         });

@@ -10,7 +10,7 @@
             <div class="card-body" >
 
            
-            <button type="button" class="btn  btn-block active"><a href="{{ url('/calc/orm') }}"style="color: rgb(0,0,0)">One rep max by Posiek</a></button>   
+            <button type="button" class="btn  btn-block active"><a href="{{ url('/calculators') }}"style="color: rgb(0,0,0)">One rep max by Posiek</a></button>   
             <button type="button" class="btn  btn-block active"><a href="https://www.bodybuilding.com/fun/other7.htm"style="color: rgb(0,0,0)">One rep max</a></button> 
             <button type="button" class="btn  btn-block active"><a href="http://bmi-online.pl/"style="color: rgb(0,0,0)">BMI</a></button>
             <button type="button" class="btn  btn-block active"><a href="http://www.fabrykasily.pl/bmr"style="color: rgb(0,0,0)">Zapotrzebowanie kaloryczne</a></button> 

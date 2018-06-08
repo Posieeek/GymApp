@@ -19,11 +19,15 @@
             <th>      <strong>Ciezar:</strong></th>
       
             <th>     <strong>Powtorzenia:</strong></th>
+
+                   <th>     <strong>Max:</strong></th>
             </tr>
    
               <td>   {{ $calculator->weight}}</td>
 
               <td>  {{ $calculator->rep}} </td>   
+
+                  <td>  {{ $calculator->max_rep}} </td>  
         </div>
     </div>
    

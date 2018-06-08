@@ -99,7 +99,7 @@
                             <div class="col-md-6">
                             <table class="table table-striped  table-dark">
         <tr class="bg-primary">
-        <th>{{ $profile->diet_name}} </th>
+        <th>{{ $profile->Diet->name}} </th>
     
                              
                                 </table>
@@ -111,7 +111,7 @@
                             <div class="col-md-6">
                             <table class="table table-striped  table-dark">
         <tr class="bg-primary">
-        <th>{{ $profile->training_name}} </th>
+        <th>{{ $profile->Training->name}} </th>
     
                              
                                 </table>

@@ -48,7 +48,7 @@ class ComponentController extends Controller
         ]);
         Component::create($request->all());
         return redirect()->route('components.index')
-                        ->with('success','Exercise created successfully');
+                        ->with('success','Produkt stworzony pomyślnie!');
     }
 
 
@@ -94,7 +94,7 @@ class ComponentController extends Controller
         ]);
         Component::find($id)->update($request->all());
         return redirect()->route('components.index')
-                        ->with('success','component updated successfully');
+                        ->with('success','Produkt zaktualizowany pomyślnie!');
     }
 
 
@@ -108,6 +108,6 @@ class ComponentController extends Controller
     {
         Component::find($id)->delete();
         return redirect()->route('components.index')
-                        ->with('success','component deleted successfully');
+                        ->with('success','Usunięto produkt');
     }
 }

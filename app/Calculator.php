@@ -17,8 +17,10 @@ class Calculator extends Model
     protected $fillable = [
        
         'id' ,
+        'name',
       'weight',
       'rep',
+      'max_rep',
     ];
    
 }

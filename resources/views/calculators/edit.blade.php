@@ -26,7 +26,7 @@
     @endif
 
 
-    {!! Form::model($calc, ['method' => 'PATCH','route' => ['calculators.update', $calculator->id]]) !!}
+    {!! Form::model($calculator, ['method' => 'PATCH','route' => ['calculators.update', $calculator->id]]) !!}
         @include('calculators.form')
     {!! Form::close() !!}
 

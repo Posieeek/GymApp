@@ -1,14 +1,14 @@
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Name:</strong>
+            <strong>Nazwa:</strong>
             {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Weight:</strong>
-            {!! Form::text('weight', null, array('placeholder' => 'Weight','class' => 'form-control','style'=>'height:150px')) !!}
+            <strong>Waga:</strong>
+            {!! Form::text('weight', null, array('placeholder' => 'Weight','class' => 'form-control')) !!}
         </div>
     </div>
   

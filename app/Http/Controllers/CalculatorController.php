@@ -15,9 +15,23 @@ class CalculatorController extends Controller
      */
     public function index()
     {
+        
         $calculators = Calculator::latest()->paginate(5);
-        return view('calculators.index',compact('calculators'))
+        
+        foreach ($calculators as $calculator)
+        {
+            $max_reps[]=($calculator->weight * (1 + 0.025 * $calculator->rep));
+        }
+
+       /* elseif ($a == 2) {  
+            echo ($b * (1 + 0.025 * $a)); 
+            echo " kg na jedno powtórzenie podnosząc $b kg na $a powtórzenia"; 
+          }
+          */
+        return view('calculators.index',compact('calculators', 'max_reps'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
+
+
     }
 
 
@@ -65,6 +79,8 @@ class CalculatorController extends Controller
     }
 
 
+
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -73,7 +89,7 @@ class CalculatorController extends Controller
      */
     public function edit($id)
     {
-        $calc = Calc::find($id);
+        $calculator = Calculator::find($id);
         return view('calculators.edit',compact('calculator'));
     }
 
