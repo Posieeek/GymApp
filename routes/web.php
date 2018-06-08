@@ -35,6 +35,7 @@ Route::get('/diet/lowcarb', 'HomeController@lowcarb')->name('lowcarb');
 Route::get('/diet/vegan', 'HomeController@vegan')->name('vegan');
 
 Route::get('/calc', 'CalcController@calc')->name('calc');
+Route::get('/calc/add/{a}/{b}', 'CalcController@add')->name('add');
 Route::get('/calc/orm', 'CalcController@orm')->name('orm');
 Route::get('/calc/bench', 'CalcController@bench')->name('bench');
 Route::get('/calc/deadlift', 'CalcController@deadlift')->name('deadlift');
@@ -49,3 +50,4 @@ Route::get('/training/fbw', 'TrainingController@fbw')->name('fbw');
 Route::resource('exercises','ExerciseController');
 Route::resource('profiles','ProfileController');
 Route::resource('components','ComponentController');
+Route::resource('calcs','CalcController');
