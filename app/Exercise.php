@@ -21,6 +21,7 @@ class Exercise extends Model
       'weight',
       'ex_set',
       'rep',
+      'volume',
     ];
     public function Training_Exercise()
     {

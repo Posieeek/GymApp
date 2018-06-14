@@ -25,20 +25,22 @@
         <tr class="bg-primary">
             
             <th>Cwiczenie</th>
+            <th>Objętość</th>
             <th>Ciezar</th>
             <th>Ilosc serii</th>
             <th>Ilosc powtorzen </th>
             <th width="280px">Action</th>
         </tr>
-    @foreach ($exercises as $exercise)
+   @foreach ($exercises as $index => $exercise)
     <tr>
         
         <td>{{ $exercise->name}}</td>
+        <td>{{$volume[$index]}}</td>
         <td>{{ $exercise->weight}}</td>
         <td>{{ $exercise->ex_set}}</td>
         <td>{{ $exercise->rep}}</td>
         <td>
-            <a class="btn btn-info" href="{{ route('exercises.show',$exercise->id) }}">Pokaż</a>
+            
             <a class="btn btn-primary" href="{{ route('exercises.edit',$exercise->id) }}">Edytuj</a>
             {!! Form::open(['method' => 'DELETE','route' => ['exercises.destroy', $exercise->id],'style'=>'display:inline']) !!}
             {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}

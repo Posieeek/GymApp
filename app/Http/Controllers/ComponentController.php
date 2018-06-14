@@ -17,10 +17,19 @@ class ComponentController extends Controller
      */
     public function index()
     {
+
+        
+       
         $components = Component::latest()->paginate(5);
-        return view('components.index',compact('components'))
+        foreach ($components as $component)
+        {
+            $calories[]=(($component->fat * 9) + ($component->proteins * 4) + ($component->carbohydrates * 4)  );
+        }
+        return view('components.index',compact('components', 'calories'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
+   
+
 
 
     /**

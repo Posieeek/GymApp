@@ -8,7 +8,8 @@
             <div class="card">
             <div class="card-header">Przykłady treningów</div>
             <div class="card-body" >
-            
+
+            <button type="button" class="btn  btn-block active"><a href="{{ url('/exercises') }}"style="color: rgb(0,0,0)">Dodaj swoje ćwiczenia!</a></button> 
             <button type="button" class="btn  btn-block active"><a href="{{ url('/training/split') }}"style="color: rgb(0,0,0)">Split</a></button>
             <button type="button" class="btn  btn-block active"><a href="{{ url('/training/fbw') }}"style="color: rgb(0,0,0)">FBW</a></button> 
             <button type="button" class="btn  btn-block active"><a href="{{ url('/training/pushpull') }}"style="color: rgb(0,0,0)">Push pull</a></button>

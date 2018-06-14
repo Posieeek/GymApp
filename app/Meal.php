@@ -28,5 +28,10 @@ class Meal extends Model
     {
         return $this->belongsTo('App\Meal_Component');
     }
+
+    public function components()
+    {
+        return $this->hasMany('App\Component');
+    }
 }
 

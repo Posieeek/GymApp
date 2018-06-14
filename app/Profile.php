@@ -41,6 +41,19 @@ class Profile extends Model
         return $this->belongsTo('App\User');
     }
 
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function addComment($body)
+    {
+        $this->comments()->create(compact('body'));
+        
+       
+    }
+
+
 
     public function Diet()
     {

@@ -103,14 +103,15 @@
                                 </table>
                             </div>
                         </div>   
+                        
                         <div class="form-group row">
                             <label for="imie" class="col-sm-4 col-form-label text-md-right">{{ __('Dieta:') }}</label>
                             <div class="col-md-6">
                             <table class="table table-striped  table-dark">
         <tr class="bg-primary">
-        @isset($diet) 
+        @isset($profile->Diet)
         <th>{{ $profile->Diet->name}} </th>
-        @endisset  
+@endisset
                    
                                 </table>
                             </div>
@@ -121,15 +122,42 @@
                             <div class="col-md-6">
                             <table class="table table-striped  table-dark">
         <tr class="bg-primary">
-        @isset($training) 
-        <th>{{ $profile->Training->name}} </th>
-        @endisset  
+        @isset($profile->Training)
+        <th>{{ $profile->Training_name}} </th>
+@endisset 
                              
                                 </table>
                             </div>
                         </div>  
-                        
+                        <hr>
+
+                   <div class="card">
+                    <div class="card-block">
+                    <form method="POST" action="/profiles/{{$profile->id}}/comments">
+                       {{csrf_field() }}
+
+                    <div class="form-group">
+                    <textarea name="body" placeholder="Twój kometnarz" class="form-control">
+                    </textarea>
+                    </div>
+
+                    <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Opublikuj</button>
+
+                    </div>
+
+                    </form>
+             
+                    </div>
+                    </div>
+
+                   
           
+
+
+
+
+
                         <div class="form-group row">
                             <label class="col-sm-4 col-form-label text-md-right">{{ __('') }}</label>
                             <div class="col-md-6">

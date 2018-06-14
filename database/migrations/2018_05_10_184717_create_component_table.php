@@ -17,6 +17,10 @@ class CreateComponentTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('weight');
+            $table->integer('calories')->unsigned()->nullable();
+            $table->integer('carbohydrates');
+            $table->integer('fat');
+            $table->integer('proteins');
             $table->timestamps();
         });
     }

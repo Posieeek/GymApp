@@ -19,12 +19,22 @@ class Component extends Model
         'id' ,
       'name',
       'weight',
+      'calories',
+      'carbohydrates',
+      'fat',
+      'proteins',
     
     ];
 
     public function Meal_Component()
     {
         return $this->belongsTo('App\Meal_Component');
+    }
+
+      
+    public function meals()
+    {
+        return $this->belongsTo('App\Meal');
     }
 }
 

@@ -56,8 +56,8 @@ class ProfileController extends Controller
             'height' => 'required',
             'weight'=> 'required',
             'experience' => 'required',
-            'diet_id',
-            'training_id'
+            'diet_name',
+            'training_name'
         
         ]);
        
@@ -104,9 +104,12 @@ class ProfileController extends Controller
     {
         request()->validate([
             'user_id',
+            'avatar',
             'name' => 'required',
             'weight' => 'required|numeric',
-            'height' => 'required|numeric'
+            'height' => 'required|numeric',
+            'diet_name',
+            'training_name'
         ]);
         $profile = Auth::user()->profile;
         if ($request->hasFile('avatar')) {

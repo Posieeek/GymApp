@@ -18,7 +18,11 @@ class ExerciseController extends Controller
     public function index()
     {
         $exercises = Exercise::latest()->paginate(5);
-        return view('exercises.index',compact('exercises'))
+        foreach ($exercises as $exercise)
+    {
+        $volume[]=(($exercise->rep)  * ($exercise->ex_set) *  ($exercise->weight) );
+    }
+        return view('exercises.index',compact('exercises','volume'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
