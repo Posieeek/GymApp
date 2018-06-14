@@ -45,10 +45,7 @@
                     {{ config('Diety', 'Diety') }}
                     </a>
 
-                    <a class="navbar-brand" href="{{ url('/gallery') }}"> 
-                    {{ config('Galeria', 'Galeria') }}
-                    </a>
-
+              
                     <a class="navbar-brand" href="{{ url('/calc') }}"> 
                     {{ config('Kalkulatory', 'Kalkulatory') }}
                     </a>

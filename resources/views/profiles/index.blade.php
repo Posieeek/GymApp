@@ -104,7 +104,7 @@
                             </div>
                         </div>   
                         
-                        <div class="form-group row">
+                      <!-- <div class="form-group row">
                             <label for="imie" class="col-sm-4 col-form-label text-md-right">{{ __('Dieta:') }}</label>
                             <div class="col-md-6">
                             <table class="table table-striped  table-dark">
@@ -128,8 +128,8 @@
                              
                                 </table>
                             </div>
-                        </div>  
-                        <hr>
+                        </div>   -->
+                        <!-- <hr>
 
                    <div class="card">
                     <div class="card-block">
@@ -149,7 +149,7 @@
                     </form>
              
                     </div>
-                    </div>
+                    </div> -->
 
                    
           

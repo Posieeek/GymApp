@@ -73,7 +73,11 @@
 
 
 </div>
-<div class="row"> 
+@if(Auth::id()  == $profile->id)
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    @endif
+                    <a class="btn btn-primary" href="{{ route('profiles.index') }}"> Back</a>
+<!-- <div class="row"> 
     <div class="col-xs-4 col-sm-4 col-md-4">
         <div class="form-group">
             <strong>Dieta:</strong>
@@ -82,6 +86,9 @@
         </div>
     </div>
     </div>
+   
+
+  
 <div class="row"> 
    <div class="col-xs-4 col-sm-4 col-md-4">
         <div class="form-group">
@@ -89,13 +96,9 @@
             {!! Form::text('training_name', null, array('placeholder' => 'Training_name','class' => 'form-control')) !!}
         </div>
     </div>
-</div>
+</div> -->
 
-    @if(Auth::id()  == $profile->id)
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    @endif
-
-   <a class="btn btn-primary" href="{{ route('profiles.index') }}"> Back</a>
+  
 </div>
 
 </div>
