@@ -32,7 +32,9 @@ class ProfilesTableSeeder extends Seeder
             'trainings_id' => '1',
             */
 
+        
             'name' => $faker->name(),
+            
             'last_name' => $faker->lastName(),
             'height' => $faker->numberBetween($min = 150, $max = 210),
             'weight' => $faker->numberBetween($min = 50, $max = 120),

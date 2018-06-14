@@ -4,6 +4,23 @@
                 
   <h1>  Edytuj profil </h1>
 <div class="row">
+
+    <div class="col-xs-4 col-sm-4 col-md-4">
+        <div class="form-group">
+
+             <img src="/uploads/avatars/{{ $profile->avatar }}" style="width:150px; height:150px; float:left; border-radius:50%; margin-right:25px;">
+         
+            <form enctype="multipart/form-data" action="/profile" method="POST">
+               
+                <input type="file" name="avatar">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+               
+            </form>
+            </div>
+</div>
+</div>
+
+<div class="row">
     <div class="col-xs-4 col-sm-4 col-md-4">
         <div class="form-group">
             <strong>Imię:</strong>
@@ -11,6 +28,9 @@
         </div>
     </div>
 </div>
+
+
+
 <div class="row"> 
     <div class="col-xs-4 col-sm-4 col-md-4">
         <div class="form-group">

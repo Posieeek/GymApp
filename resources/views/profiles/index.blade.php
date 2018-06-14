@@ -26,15 +26,24 @@
   <div class="form-group row">
                             <label for="imie" class="col-sm-4 col-form-label text-md-right">{{ __('Avatar:') }}</label>
                             <div class="col-md-6">
-                            <table class="table table-striped  table-dark">
+                         
         <tr class="bg-primary">
-        <th>{{ $profile->name}} </th>
+        <th>
+  <div class="form-group row">
+
+
+  <p class="text-center"><img src="/img/avatars/{{ $profile->avatar }}" style="width:60px; height:60px; margin-left: 15px  ">
+                    </p>
+                   
+                            </div>
+                        </th>
     
                              
-                                </table>
+                               
                             </div>
-                        </div>      
+                        </div>     
 
+           
                              <div class="form-group row">
                             <label for="imie" class="col-sm-4 col-form-label text-md-right">{{ __('Imię:') }}</label>
                             <div class="col-md-6">
@@ -99,9 +108,10 @@
                             <div class="col-md-6">
                             <table class="table table-striped  table-dark">
         <tr class="bg-primary">
+        @isset($diet) 
         <th>{{ $profile->Diet->name}} </th>
-    
-                             
+        @endisset  
+                   
                                 </table>
                             </div>
                         </div>  
@@ -111,8 +121,9 @@
                             <div class="col-md-6">
                             <table class="table table-striped  table-dark">
         <tr class="bg-primary">
+        @isset($training) 
         <th>{{ $profile->Training->name}} </th>
-    
+        @endisset  
                              
                                 </table>
                             </div>

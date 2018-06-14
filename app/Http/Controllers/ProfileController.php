@@ -5,12 +5,17 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Profile;
 use App\User;
-
+use Image;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
+
+
+   
     /**
      * Display a listing of the resource.
      *
@@ -45,6 +50,7 @@ class ProfileController extends Controller
     {
         request()->validate([
             'user_id',
+            'avatar',
             'name' => 'required',
             'last_name' => 'required',
             'height' => 'required',
@@ -102,6 +108,16 @@ class ProfileController extends Controller
             'weight' => 'required|numeric',
             'height' => 'required|numeric'
         ]);
+        $profile = Auth::user()->profile;
+        if ($request->hasFile('avatar')) {
+            $avatar = $request->file('avatar');
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->resize(300, 300)->save(public_path('/img/avatars/' . $filename));
+
+            $profile->avatar = $filename;
+        }
+        $profile->save();
+
         Profile::find($id)->update($request->all());
         return redirect()->route('profiles.index')
                         ->with('success','profiles updated successfully');
