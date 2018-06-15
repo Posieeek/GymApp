@@ -150,7 +150,18 @@
              
                     </div>
                     </div> -->
+                    <h1> {{$profile->title}}</h1>
+{{$profile ->body}}
 
+<div class ="comments">
+@foreach ($profile->comments  as $comment)
+<article>
+{{$comment->body}}
+</article>
+@endforeach</date_interval_create_from_date_string
+
+
+</div>
                    
           
 
@@ -170,6 +181,7 @@
 {!! Form::close() !!}
                              
     </table>
+    
 </div>
 </div>  
                             </div>

@@ -17,8 +17,6 @@ class CreateCommentsTable extends Migration
             $table->increments('id');
             $table->integer('profile_id')->unsigned()->index()->nullable();
             $table->foreign('profile_id')->references('id')->on('profiles')->onDelete('cascade');
-            $table->integer('user_id')->unsigned()->index()->nullable();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('body');
             $table->timestamps();
         });

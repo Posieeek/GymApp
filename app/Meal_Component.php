@@ -26,6 +26,8 @@ class Meal_Component extends Model
         return $this->hasMany('App\Component');
     }
 
+
+    
     public function meals()
     {
         return $this->hasMany('App\Meal');
