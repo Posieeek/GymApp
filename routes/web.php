@@ -49,5 +49,5 @@ Route::resource('exercises','ExerciseController');
 Route::resource('profiles','ProfileController');
 Route::resource('components','ComponentController');
 Route::resource('calculators','CalculatorController');
-  Route::post('/profile/{profile}/comments', 'CommentsController@store')
-        ->name('addComment');
+  Route::post('/profiles/{profile}/comments', 'CommentsController@store');
+      

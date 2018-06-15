@@ -128,43 +128,35 @@
                              
                                 </table>
                             </div>
-                        </div>   -->
-                        <!-- <hr>
-
-                   <div class="card">
-                    <div class="card-block">
-                    <form method="POST" action="/profiles/{{$profile->id}}/comments">
-                       {{csrf_field() }}
-
-                    <div class="form-group">
-                    <textarea name="body" placeholder="Twój kometnarz" class="form-control">
-                    </textarea>
-                    </div>
-
-                    <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Opublikuj</button>
-
-                    </div>
-
-                    </form>
-             
-                    </div>
-                    </div> -->
-                    <h1> {{$profile->title}}</h1>
-{{$profile ->body}}
+                        </div>   --> 
+                        <h3> Komentarze </h3>
+                        <hr>
 
 <div class ="comments">
 @foreach ($profile->comments  as $comment)
 <article>
-{{$comment->body}}
+{{$comment->body}} <br> </br> by {{$comment->profile->name}}
 </article>
-@endforeach</date_interval_create_from_date_string
+@endforeach
 
 
-</div>
-                   
-          
+</div>  
+                   <hr>
+          <div class="card">
+          <div class="card-block">
+          <form method="POST" action="/profiles/{{$profile->id}}/comments">
+         
+         {{csrf_field()}}
 
+          <div class="form-group">
+          <textarea name="body" placeholder="Your comment here" class="form-control">
+          </textarea>
+          </div>
+
+          <div class ="form-group">
+          <button type="submit" class="btn btn-primary"> Add comment </button>
+          </div> 
+</form>
 
 
 
@@ -176,9 +168,7 @@
         <tr class="bg-primary">
           <a href="{{ route('profiles.edit',$profile->id) }}" class="btn brn-lg btn-primary"
              style="margin-right: 8px;">Edytuj Profil</a>
-             {!! Form::open(['method' => 'DELETE','route' => ['profiles.destroy', $profile->id],'style'=>'display:inline']) !!}
-{!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-{!! Form::close() !!}
+            
                              
     </table>
     
