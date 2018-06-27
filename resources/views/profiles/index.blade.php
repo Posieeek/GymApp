@@ -135,8 +135,19 @@
 <div class ="comments">
 @foreach ($profile->comments  as $comment)
 <article>
-{{$comment->body}} <br> </br> by {{$comment->profile->name}}
+{{$comment->body}} <br>  by {{$comment->profile->name}}
+
 </article>
+<form action="{{ route('delete-comments', ['id' => $comment->id]) }}"
+                                                  method="POST">
+                                                @csrf
+                                                {{method_field('DELETE')}}
+                             <button class="btn bg-primary" type="submit"> Usuń
+                           
+                             </button>
+                            </form>
+</br>
+                      
 @endforeach
 
 

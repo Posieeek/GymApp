@@ -36,10 +36,7 @@ class Profile extends Model
     
     //
 
-    public function User()
-    {
-        return $this->belongsTo('App\User');
-    }
+    
 
     public function comments()
     {
@@ -53,7 +50,10 @@ class Profile extends Model
        
     }
 
-
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
     public function Diet()
     {

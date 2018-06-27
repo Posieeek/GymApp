@@ -17,14 +17,20 @@ class CommentsController extends Controller
         // Comment::create([
         //     'body' => request('body'),
         //     'profile_id' => $profile ->id
-           
-        // ]);
-
+      
+//]);
        
     
 
         return back();
     }
+    public function destroy($id)
+    {
+        comment::where('id',$id)->delete();
 
+
+        return back()
+            ->with('success', __('Komentarz usunięty pomyślnie!'));
+    }
     
 }

@@ -23,6 +23,7 @@ class Component extends Model
       'carbohydrates',
       'fat',
       'proteins',
+      'user_id',
     
     ];
 
@@ -36,6 +37,8 @@ class Component extends Model
     {
         return $this->belongsTo('App\Meal');
     }
+
+   
 }
 
 

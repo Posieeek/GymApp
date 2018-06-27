@@ -30,6 +30,7 @@
             <th>Węgle</th>
             <th>Tłuszcze</th>
             <th>Białko</th>
+           
             <th width="280px">Action</th>
         </tr>@foreach ($components as $index => $component)
   
@@ -41,7 +42,8 @@
         <td>{{ $component->carbohydrates}}</td>
         <td>{{ $component->fat}}</td>
         <td>{{ $component->proteins}}</td>
-       
+    
+          
         <td>
     
             <a class="btn btn-primary" href="{{ route('components.edit',$component->id) }}">Edytuj</a>

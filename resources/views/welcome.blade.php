@@ -108,6 +108,9 @@
                     <a class="navbar-brand" href="{{ url('/calc') }}"> 
                     {{ config('Kalkulatory', 'Kalkulatory') }}
                     </a>
+                    <a class="navbar-brand" href="{{ url('/video') }}"> 
+                    {{ config('Filmy', 'Filmy') }}
+                    </a>
 
             @if (Route::has('login'))
                

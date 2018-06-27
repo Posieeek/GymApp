@@ -6,6 +6,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Component;
+use App\Profile;
+use App\User;
 
 
 class ComponentController extends Controller
@@ -19,11 +21,11 @@ class ComponentController extends Controller
     {
 
         
-       
         $components = Component::latest()->paginate(5);
         foreach ($components as $component)
         {
             $calories[]=(($component->fat * 9) + ($component->proteins * 4) + ($component->carbohydrates * 4)  );
+            
         }
         return view('components.index',compact('components', 'calories'))
             ->with('i', (request()->input('page', 1) - 1) * 5);

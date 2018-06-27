@@ -18,7 +18,8 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
+Route::get('/admin', 'AdminController@index')->name('admin');
+Route::get('/superadmin', 'SuperAdminController@index')->name('superadmin');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
@@ -26,9 +27,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile', 'HomeController@profile')->name('profile');
 
-
+Route::delete('/delete-comments/{id}', 'CommentsController@destroy')
+->name('delete-comments');
 Route::get('/gallery', 'HomeController@gallery')->name('gallery');
-
+Route::get('/video', 'HomeController@video')->name('video');
 Route::get('/diet', 'HomeController@diet')->name('diet');
 Route::get('/diet/highcarb', 'HomeController@highcarb')->name('highcarb');
 Route::get('/diet/lowcarb', 'HomeController@lowcarb')->name('lowcarb');
@@ -50,4 +52,15 @@ Route::resource('profiles','ProfileController');
 Route::resource('components','ComponentController');
 Route::resource('calculators','CalculatorController');
   Route::post('/profiles/{profile}/comments', 'CommentsController@store');
-      
+
+  Route::middleware('role:SuperAdmin')->prefix('superadmin')->group(function () {
+   
+    Route::resource('roles', 'RoleController')->except(['show']);
+    
+    Route::get('/assign-roles', 'SuperAdminController@assignRoles')
+        ->name('assign-roles');
+    Route::post('/update-roles', 'SuperAdminController@updateRoles')
+        ->name('update-roles');
+    Route::delete('/delete-roles/{id}', 'SuperAdminController@deleteRoles')
+        ->name('delete-roles');
+});

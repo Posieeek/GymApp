@@ -43,6 +43,10 @@ class HomeController extends Controller
         return view('profile');
     }
     
+    public function video()
+    {
+        return view('/video');
+    }
 
     public function highcarb()
     {
