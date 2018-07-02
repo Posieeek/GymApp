@@ -8,7 +8,7 @@
                 <h2> Pokaz produkt</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('components.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('meals.index') }}"> Back</a>
             </div>
         </div>
     </div>
@@ -16,11 +16,11 @@
  <table class="table table-striped  table-dark">
            <tr>
             <th>    <strong>Nazwa:</strong> </th>
-            <th>      <strong>Waga:</strong></th>
+            <th>      <strong>Dieta:</strong></th>
          
             </tr>
-              <td>  {{ $component->name}}</td>
-              <td>   {{ $component->weight}}</td>
+              <td>  {{ $meal->name}}</td>
+              <td>   {{ $meal->diet_id}}</td>
            
         </div>
     </div>

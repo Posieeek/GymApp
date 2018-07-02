@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Dodaj produkt</h2>
+                <h2>Dodaj posiłek</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-primary" href="{{ route('components.index') }}"> Back</a>
@@ -24,8 +24,8 @@
     @endif
 
 
-    {!! Form::open(array('route' => 'components.store','method'=>'POST')) !!}
-         @include('components.form')
+    {!! Form::open(array('route' => 'meals.store','method'=>'POST')) !!}
+         @include('meals.form')
     {!! Form::close() !!}
 
 

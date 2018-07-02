@@ -22,10 +22,10 @@
     <style>
  html, body {    
     background: url("bac.jpg");
-    height: 100%;
-    background-position: center;
+  
+    background-position: fixed left top;
     background-repeat: no-repeat;
-    background-size: cover;
+    background: #dddddd;
             }
     </style>
 </head>

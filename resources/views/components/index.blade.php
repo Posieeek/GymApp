@@ -7,9 +7,10 @@
             <div class="pull-left">
                 <h2>Lista produktów</h2>
             </div>
-            <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('components.create') }}"> Dodaj produkt</a>
-            </div>
+           
+            <br>
+              
+           
         </div>
     </div>
 
@@ -54,7 +55,7 @@
     </tr>
     @endforeach
     </table>
-
+    <a class="btn btn-success" href="{{ route('components.create') }}"> Dodaj produkt</a>
 
     {!! $components->links() !!}
 @endsection

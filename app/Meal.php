@@ -19,19 +19,34 @@ class Meal extends Model
        
         'id' ,
       'name',
-      'calories',
-      'carbohydrates',
-      'fat',
-      'proteins',
+     'diet_id',
+     'created_at',
+     
     ];
-    public function Meal_Component()
+    public function meal_Component()
     {
         return $this->belongsTo('App\Meal_Component');
     }
 
-    public function components()
-    {
-        return $this->hasMany('App\Component');
-    }
+     public function components()
+   {
+         return $this->hasMany('App\Component');
+     }
+     
+    public function diet()
+  {
+       
+       return $this->belongsTo(Diet::class);
+ }
+// public function diets()
+// {
+//     return $this->belongsToMany(Diet::class)
+// }
+
+    public function diet_Meal()
+     {
+        return $this->belongsTo('App\Diet_Meal');
+     }
+
 }
 

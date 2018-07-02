@@ -23,20 +23,20 @@ class Component extends Model
       'carbohydrates',
       'fat',
       'proteins',
-      'user_id',
+      
     
     ];
 
-    public function Meal_Component()
+    public function meal_Component()
     {
         return $this->belongsTo('App\Meal_Component');
     }
 
-      
-    public function meals()
+    public function meal()
     {
         return $this->belongsTo('App\Meal');
     }
+    
 
    
 }

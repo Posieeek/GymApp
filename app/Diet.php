@@ -18,12 +18,20 @@ class Diet extends Model
        
         'id' ,
         'name' ,
-        'meal_id',
+  
     ];
 
-    public function Meal()
+     public function meal()
+     {
+         
+        return $this->hasMany(Meal::class);
+   }
+
+    public function diet_Meal()
     {
-        return $this->hasMany('App\Meal');
+        return $this->belongsTo('App\Diet_Meal');
     }
+
+    
     //
 }

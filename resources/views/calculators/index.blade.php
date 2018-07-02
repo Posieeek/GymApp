@@ -8,7 +8,7 @@
                 <h2>Zmierz swoje maksy!</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('calculators.create') }}"> Dodaj cwiczenie</a>
+               
             </div>
         </div>
     </div>
@@ -51,7 +51,7 @@
     </tr>
     @endforeach
     </table>
-
+    <a class="btn btn-success" href="{{ route('calculators.create') }}"> Dodaj cwiczenie</a>
 
     {!! $calculators->links() !!}
 @endsection

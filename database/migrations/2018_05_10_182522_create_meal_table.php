@@ -16,10 +16,13 @@ class CreateMealTable extends Migration
         Schema::create('meals', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('diet_id');
-        
+            $table->integer('diet_id')->unsigned()->index()->nullable();
+          $table->foreign('diet_id')->references('id')->on('diets');
+            $table->timestamps();
            
         });
+   
+        
     }
 
     /**

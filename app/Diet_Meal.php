@@ -12,7 +12,7 @@ class Diet_Meal extends Model
      *
      * @var array
      */
-    public $table = 'diet_meal';
+    public $table = 'diet_meals';
     protected $fillable = [
        
         'id',

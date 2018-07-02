@@ -8,7 +8,7 @@
                 <h2>Dziennik cwiczen</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('exercises.create') }}"> Dodaj cwiczenie</a>
+               
             </div>
         </div>
     </div>
@@ -49,7 +49,7 @@
     </tr>
     @endforeach
     </table>
-
+    <a class="btn btn-success" href="{{ route('exercises.create') }}"> Dodaj cwiczenie</a>
 
     {!! $exercises->links() !!}
 @endsection

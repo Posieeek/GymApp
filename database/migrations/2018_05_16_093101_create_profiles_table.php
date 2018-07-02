@@ -29,8 +29,7 @@ class CreateProfilesTable extends Migration
         //    
          //   $table->integer('diet_id')->unsigned()->nullable();
            // $table->integer('training_id')->unsigned()->nullable();
-       
-            
+           
         // });
 
         // Schema::table('profiles', function (Blueprint $table) {
