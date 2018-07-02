@@ -21,12 +21,11 @@ class CreateMealTable extends Migration
             $table->timestamps();
            
         });
-//    Schema::table('meals', function (Blueprint $table) {
-         
-//          $table->foreign('diet_id')->references('id')->on('diets');
+  Schema::table('meals', function (Blueprint $table) {
+        $table->foreign('diet_id')->references('id')->on('diets');
        
         
-//     });
+    });
         
     }
 
