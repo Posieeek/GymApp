@@ -19,6 +19,10 @@ class ComponentTableSeeder extends Seeder
         DB::table('components')->insert([
             'name' => $faker->word(),
             'weight' => $faker->numberBetween($min = 10, $max = 900),
+            'calories' => $faker->randomElement(range(100,1000)),
+            'carbohydrates' => $faker->randomElement(range(5,500)),
+            'fat' => $faker->randomElement(range(5,500)),
+            'proteins' => $faker->randomElement(range(5,500)),
         ]);
 
         
