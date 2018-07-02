@@ -15,10 +15,11 @@ class CreateDietMealTable extends Migration
     {
         Schema::create('diet_meals', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('diet_id')->unsigned();
-            $table->integer('meal_id')->unsigned();
-            $table->foreign('diet_id')->references('id')->on('diets');
-            $table->foreign('meal_id')->references('id')->on('meals');
+            $table->integer('diet_id')->unsigned()->index();
+            $table->foreign('diet_id')->references('id')->on('diets')->onDelete('cascade');
+            $table->integer('meal_id')->unsigned()->index();
+            $table->foreign('meal_id')->references('id')->on('meals')->onDelete('cascade');
+         
             $table->timestamps();
         });
      

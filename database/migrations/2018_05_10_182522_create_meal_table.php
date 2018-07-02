@@ -16,12 +16,17 @@ class CreateMealTable extends Migration
         Schema::create('meals', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('diet_id')->unsigned()->index()->nullable();
-          $table->foreign('diet_id')->references('id')->on('diets');
+            $table->integer('diet_id')->unsigned()->nullable();
+
             $table->timestamps();
            
         });
-   
+//    Schema::table('meals', function (Blueprint $table) {
+         
+//          $table->foreign('diet_id')->references('id')->on('diets');
+       
+        
+//     });
         
     }
 

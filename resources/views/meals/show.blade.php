@@ -20,7 +20,7 @@
          
             </tr>
               <td>  {{ $meal->name}}</td>
-              <td>   {{ $meal->diet_id}}</td>
+              <td>   {{ $meal->diet->id}}</td>
            
         </div>
     </div>

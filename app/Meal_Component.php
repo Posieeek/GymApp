@@ -14,7 +14,6 @@ class Meal_Component extends Model
      */
     public $table = 'meal_component';
     protected $fillable = [
-       
         'id',
         'meal_id' ,
         'component_id',

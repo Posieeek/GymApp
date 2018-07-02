@@ -33,14 +33,18 @@ class Meal extends Model
          return $this->hasMany('App\Component');
      }
      
-    public function diet()
-  {
+   public function diet()
+   {
        
        return $this->belongsTo(Diet::class);
- }
+  }
 // public function diets()
 // {
 //     return $this->belongsToMany(Diet::class)
+// }
+// public function diet()
+// {
+//     return $this->belongsToMany(Diet::class)->withTimestamps();
 // }
 
     public function diet_Meal()

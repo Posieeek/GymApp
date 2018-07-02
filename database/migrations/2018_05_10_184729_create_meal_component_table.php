@@ -17,13 +17,10 @@ class CreateMealComponentTable extends Migration
             $table->increments('id');
             $table->integer('meal_id')->unsigned();
             $table->integer('component_id')->unsigned();
-        
+         
             
         });
-        Schema::table('meal_components', function (Blueprint $table) {
-            $table->foreign('meal_id')->references('id')->on('meals');
-            $table->foreign('component_id')->references('id')->on('components');
-});
+      
 
     }
 

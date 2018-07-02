@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-sm-8 ">
             <div class="pull-left">
-                <h2>Lista posiłków</h2>
+          
             </div>
             <div class="pull-right">
      
@@ -19,8 +19,9 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-
-
+    <div class="row justify-content-center">
+        <div class="col-sm-6 ">
+        <h2>Lista posiłków</h2>
     <table class="table table-striped  table-dark">
         <tr class="bg-primary">
             
@@ -33,7 +34,7 @@
     <tr>
         
         <td>{{ $meal->name}}</td>
-        <td>{{ $meal->diet_id}}</td>
+        <td>{{ $meal->diet->name}}</td>
  
        
         <td>
@@ -47,6 +48,7 @@
     @endforeach
     </table>
     <a class="btn btn-success" href="{{ route('meals.create') }}"> Dodaj posiłek</a>
-
+    </div>
+    </div>
     {!! $meals->links() !!}
 @endsection
