@@ -48,5 +48,13 @@ class ProfilesTableSeeder extends Seeder
      
         }
         //
+        DB::table('profiles')->insert([
+            'name' => $faker->name(),
+            'last_name' => $faker->lastName(),
+            'height' => $faker->numberBetween($min = 150, $max = 210),
+            'weight' => $faker->numberBetween($min = 50, $max = 120),
+            'experience' => $faker->randomDigit." years",
+            'user_id' => 11,
+        ]);
     }
 }
