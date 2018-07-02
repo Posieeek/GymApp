@@ -22,6 +22,7 @@ class CreateComponentTable extends Migration
             $table->integer('fat');
             $table->integer('proteins');
           
+            
             $table->timestamps();
         });
    
