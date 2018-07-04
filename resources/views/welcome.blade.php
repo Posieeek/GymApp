@@ -115,7 +115,7 @@
             @if (Route::has('login'))
                
                     @auth
-                    <a class="navbar-brand" href="{{ route('profile') }}">
+                    <a class="navbar-brand" href="{{ url('/profiles') }}">
                     {{ config('Profil', 'Profil') }}
                         </a>
                     @endauth

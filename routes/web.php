@@ -25,7 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/profile', 'HomeController@profile')->name('profile');
+// Route::get('/profile', 'HomeController@profile')->name('profile');
 
 Route::delete('/delete-comments/{id}', 'CommentsController@destroy')
 ->name('delete-comments');

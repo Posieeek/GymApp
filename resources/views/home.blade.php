@@ -16,7 +16,7 @@
                         Jesteś zalogowany!
 
                         <button type="button" class="btn btn-block active">
-                            <a href="{{ route('profile') }}" style="color: rgb(0,0,0)">Twój profil:</a>
+                            <a href="{{ url('/profiles') }}" style="color: rgb(0,0,0)">Twój profil:</a>
                         </button>
                     </div>
                 </div>
