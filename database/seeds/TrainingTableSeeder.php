@@ -22,6 +22,8 @@ class TrainingTableSeeder extends Seeder
            
             'name' => $faker->word(),
             'owner_id'=>$faker->numberBetween($min = 1, $max = 10),
+            'updated_at' => \Carbon\Carbon::now(),
+            'created_at' => \Carbon\Carbon::now(),
         ]);
         
         //

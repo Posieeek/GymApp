@@ -13,13 +13,13 @@ class CreateTrainingExerciseTable extends Migration
      */
     public function up()
     {
-        Schema::create('training_exercises', function (Blueprint $table) {
+        Schema::create('training_exercise', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('training_id')->unsigned();
             $table->integer('exercise_id')->unsigned();
-            $table->foreign('training_id')->references('id')->on('trainings');
-            $table->foreign('exercise_id')->references('id')->on('exercises');
-            
+            $table->foreign('training_id')->references('id')->on('trainings')->onDelete('cascade');
+            $table->foreign('exercise_id')->references('id')->on('exercises')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -30,6 +30,6 @@ class CreateTrainingExerciseTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('training_exercises');
+        Schema::dropIfExists('training_exercise');
     }
 }

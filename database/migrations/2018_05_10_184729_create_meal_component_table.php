@@ -19,7 +19,7 @@ class CreateMealComponentTable extends Migration
             $table->foreign('meal_id')->references('id')->on('meals')->onDelete('cascade');
             $table->integer('component_id')->unsigned();
             $table->foreign('component_id')->references('id')->on('components')->onDelete('cascade');
-         
+            $table->timestamps();
             
         });
       
@@ -34,6 +34,6 @@ class CreateMealComponentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('meal_components');
+        Schema::dropIfExists('meal_component');
     }
 }

@@ -32,6 +32,6 @@ class CreateDietMealTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('diet_meals');
+        Schema::dropIfExists('diet_meal');
     }
 }

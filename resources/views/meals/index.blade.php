@@ -12,31 +12,25 @@
         <h2>Lista posiłków</h2>
        
         <a class="btn btn-success" href="{{ route('meals.create') }}"> Dodaj posiłek</a>
-    <a href="{{route('components.index')}}" class="btn btn-success">Twoje produkty</a>
+    <a href="{{route('components.index')}}" class="btn btn-success ">Twoje produkty</a>
     <a href="{{route('diets.index')}}" class="btn btn-success">Dieta</a>
     <br>
        @forelse($meals as $meal)
         <div class="card">
         <div class="row justify-content-center">
-        <div class="col-sm-6 ">
- <div class="table-responsive">
-         <table class="table table-striped  table-dark">
-        <tr class="bg-info">
-            <th>Nazwa posiłku</th>
-            <th ></th>
-        </tr>
-    <tr>
-        <td>{{ $meal->name}}</td>
-        <td>
-            <a class="btn btn-primary" href="{{ route('meals.edit',$meal->id) }}">Edytuj</a>
+        <div class="col-sm-10 ">
+
+            <h2>Posiłek: {{ $meal->name}}</h2>
+    
+      
+     
+            <a class="btn btn-primary " href="{{ route('meals.edit',$meal->id) }}">Edytuj</a>
             {!! Form::open(['method' => 'DELETE','route' => ['meals.destroy', $meal->id],'style'=>'display:inline']) !!}
             {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
             {!! Form::close() !!}
-        </td>
-    </tr>
-</table>
+        
+  
 
-</div>
 </div>
 </div>
 <div class="row justify-content-center">

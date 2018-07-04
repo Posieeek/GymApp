@@ -2,25 +2,20 @@
 
 
 @section('content')
-    <div class="row">
-        <div class="col-sm-8 ">
-            <div class="pull-left">
-                <h2>Dziennik cwiczen</h2>
-            </div>
-            <div class="pull-right">
-               
-            </div>
-        </div>
-    </div>
-
+ 
+    
 
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
             <p>{{ $message }}</p>
         </div>
     @endif
-
-
+    <div class="row justify-content-center">
+        <div class="col-sm-6 ">
+        <h2>Lista ćwiczeń</h2>
+  <a class="btn btn-success" href="{{ route('exercises.create') }}"> Dodaj ćwiczenie</a>
+    <a href="{{route('trainings.index')}}" class="btn btn-success">Twoje treningi</a>
+   
     <table class="table table-striped  table-dark">
         <tr class="bg-primary">
             
@@ -49,7 +44,9 @@
     </tr>
     @endforeach
     </table>
-    <a class="btn btn-success" href="{{ route('exercises.create') }}"> Dodaj cwiczenie</a>
+  
+    </div>
+    </div>
 
-    {!! $exercises->links() !!}
+   
 @endsection

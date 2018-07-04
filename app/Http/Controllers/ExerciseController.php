@@ -4,9 +4,9 @@
 namespace App\Http\Controllers;
 
 
-use Illuminate\Http\Request;
+use App\Http\Requests\ExerciseRequest;
 use App\Exercise;
-
+use Illuminate\Http\Request;
 
 class ExerciseController extends Controller
 {
@@ -17,13 +17,15 @@ class ExerciseController extends Controller
      */
     public function index()
     {
-        $exercises = Exercise::latest()->paginate(5);
+        $exercises = auth()->user()->exercises()->get();
         foreach ($exercises as $exercise)
     {
         $volume[]=(($exercise->rep)  * ($exercise->ex_set) *  ($exercise->weight) );
     }
-        return view('exercises.index',compact('exercises','volume'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+   
+
+    return view('exercises.index', compact('exercises', 'volume'));
+     
     }
 
 
@@ -40,21 +42,14 @@ class ExerciseController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
+     *@param ExerciseRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ExerciseRequest $request)
     {
-        request()->validate([
-            'name' => 'required',
-            'weight' => 'required',
-            'ex_set' => 'required',
-            'rep' => 'required',
-        ]);
-        Exercise::create($request->all());
+        Exercise::create(array_merge($request->all(), ['owner_id' => auth()->id()]));
         return redirect()->route('exercises.index')
-                        ->with('success','Exercise created successfully');
+                        ->with('message','Dodałeś ćwiczenie!');
     }
 
 
@@ -66,7 +61,7 @@ class ExerciseController extends Controller
      */
     public function show($id)
     {
-        $exercise = Exercise::find($id);
+    
         return view('exercises.show',compact('exercise'));
     }
 
@@ -91,30 +86,26 @@ class ExerciseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ExerciseRequest $request, Exercise $exercise)
     {
-        request()->validate([
-            'name' => 'required',
-            'weight' => 'required',
-            'ex_set' => 'required',
-            'rep' => 'required',
-        ]);
-        Exercise::find($id)->update($request->all());
+      
+        $exercise->update($request->all());
         return redirect()->route('exercises.index')
-                        ->with('success','Exercise updated successfully');
+                        ->with('success','Pomyślnie zedytowałeś ćwiczenie!');
     }
 
 
-    /**
+        /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Exercise $exercise
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
-    public function destroy($id)
+    public function destroy(Exercise $exercise)
     {
-        Exercise::find($id)->delete();
-        return redirect()->route('exercises.index')
-                        ->with('success','Exercise deleted successfully');
+        $exercise->delete();
+
+        return back()->with('message', 'Pomyślnie usunięto ćwiczenie.');
     }
 }

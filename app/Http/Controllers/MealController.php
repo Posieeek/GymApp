@@ -128,13 +128,14 @@ class MealController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Meal $meal
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
-    public function destroy($id)
+    public function destroy(Meal $meal)
     {
-        Meal::find($id)->delete();
-        return redirect()->route('meals.index')
-                        ->with('success','Usunięto posiłek');
+        $meal->delete();
+
+        return back()->with('message', 'Pomyślnie usunięto posiłek.');
     }
 }

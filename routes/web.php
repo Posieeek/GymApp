@@ -48,6 +48,7 @@ Route::get('/training/podwyskok', 'TrainingController@podwyskok')->name('podwysk
 Route::get('/training/pplegs', 'TrainingController@pplegs')->name('pplegs');
 Route::get('/training/fbw', 'TrainingController@fbw')->name('fbw');
 
+Route::resource('trainings', 'TrainingController');
 Route::resource('meals', 'MealController');
 Route::resource('exercises','ExerciseController');
 Route::resource('profiles','ProfileController');

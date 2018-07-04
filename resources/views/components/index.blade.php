@@ -2,14 +2,7 @@
 
 
 @section('content')
-    <div class="row">
-        <div class="col-sm-8 ">
-            <div class="pull-left">
-            </div>
-            <br>
-        </div>
-    </div>
-
+  
 
     @if ($message = Session::get('success'))
         <div class="alert alert-success">

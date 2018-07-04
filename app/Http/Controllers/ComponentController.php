@@ -100,16 +100,17 @@ class ComponentController extends Controller
     }
 
 
-    /**
+     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Component $component
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
-    public function destroy($id)
+    public function destroy(Component $component)
     {
-        Component::find($id)->delete();
-        return redirect()->route('components.index')
-                        ->with('success','Usunięto produkt');
+        $component->delete();
+
+        return redirect()->route('components.index')->with('message', 'Pomyślnie usunięto produkt.');
     }
 }

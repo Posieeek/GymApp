@@ -17,10 +17,14 @@ class CreateTrainingTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('owner_id')->unsigned()->index();
-            $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
-           
+            $table->timestamps();
             
            
+        });
+        Schema::table('trainings', function (Blueprint $table) {
+            $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
+               
+            
         });
     }
 
