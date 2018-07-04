@@ -137,20 +137,17 @@
 <article>
 {{$comment->body}} <br>  by {{$comment->profile->name}}
 
-</article>
+ </article>
+ 
 <form action="{{ route('delete-comments', ['id' => $comment->id]) }}"
-                                                  method="POST">
-                                                @csrf
-                                                {{method_field('DELETE')}}
-                             <button class="btn bg-primary" type="submit"> Usuń
-                           
-                             </button>
-                            </form>
-</br>
-                      
+                                                 method="POST">                                                @csrf                                                {{method_field('DELETE')}}
+                                                   <button class="btn bg-primary" type="submit"> <i class="fa fa-heart">  Usuń
+                            </i>
+                            </button>
+                           </form>
+
+</br>                
 @endforeach
-
-
 </div>  
                    <hr>
           <div class="card">
@@ -163,7 +160,7 @@
           <textarea name="body" placeholder="Your comment here" class="form-control">
           </textarea>
           </div>
-
+        
           <div class ="form-group">
           <button type="submit" class="btn btn-primary"> Add comment </button>
           </div> 
