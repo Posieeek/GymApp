@@ -14,16 +14,17 @@ class Training extends Model
      *
      * @var array
      */
-    protected $fillable = [
-       
-        'id',
-        'name' ,
+    protected $guarded = [];
 
-    
-    ];
-    public function Training_Exercise()
+    public function owner()
     {
-        return $this->belongsTo('App\Training_Exercise');
+        return $this->belongsTo(Profile::class, 'owner_id');
     }
+
+    public function exercises()
+    {
+        return $this->belongsToMany(Exercise::class, 'training_exercise', 'training_id', 'exercise_id');
+    }
+    
     //
 }

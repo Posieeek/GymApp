@@ -27,6 +27,9 @@ class ExerciseTableSeeder extends Seeder
         'weight' => $faker->numberBetween($min = 1, $max = 200),
         'ex_set' => $faker->numberBetween($min = 1, $max = 5),
         'rep' => $faker->numberBetween($min = 1, $max = 12),
+        'owner_id'=>$faker->numberBetween($min = 1, $max = 10),
+        'updated_at' => \Carbon\Carbon::now(),
+        'created_at' => \Carbon\Carbon::now(),
             ]);
      
         //

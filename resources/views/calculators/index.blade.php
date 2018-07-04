@@ -2,16 +2,11 @@
 
 
 @section('content')
-    <div class="row">
-        <div class="col-sm-8 ">
-            <div class="pull-left">
-                <h2>Zmierz swoje maksy!</h2>
-            </div>
-            <div class="pull-right">
-               
-            </div>
-        </div>
-    </div>
+    
+          
+
+          
+  
 
 
     @if ($message = Session::get('success'))
@@ -20,7 +15,12 @@
         </div>
     @endif
 
-
+<div class="row justify-content-center">
+        <div class="col-sm-6 ">
+       
+                <h2>Zmierz swoje maksy!</h2>
+             
+      
     <table class="table table-striped  table-dark">
         <tr class="bg-primary">
        <th>Nazwa</th>     
@@ -42,8 +42,7 @@
         <td>{{ $calculator->rep}}</td>
         <td>{{$max_reps[$index]}}</td>
         <td>
-            <a class="btn btn-info" href="{{ route('calculators.show',$calculator->id) }}">Pokaż</a>
-            <a class="btn btn-primary" href="{{ route('calculators.edit',$calculator->id) }}">Edytuj</a>
+           <a class="btn btn-primary" href="{{ route('calculators.edit',$calculator->id) }}">Edytuj</a>
             {!! Form::open(['method' => 'DELETE','route' => ['calculators.destroy', $calculator->id],'style'=>'display:inline']) !!}
             {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
             {!! Form::close() !!}
@@ -52,6 +51,10 @@
     @endforeach
     </table>
     <a class="btn btn-success" href="{{ route('calculators.create') }}"> Dodaj cwiczenie</a>
+    </div>
+    </div>
+   
+   
 
-    {!! $calculators->links() !!}
+
 @endsection

@@ -15,42 +15,27 @@ class Meal extends Model
      *
      * @var array
      */
-    protected $fillable = [
-       
-        'id' ,
-      'name',
-     'diet_id',
-     'created_at',
-     
-    ];
-    public function meal_Component()
-    {
-        return $this->belongsTo('App\Meal_Component');
-    }
+    protected $guarded = [];
+  
+    
 
      public function components()
    {
-         return $this->hasMany('App\Component');
+    return $this->belongsToMany(Component::class, 'meal_component', 'meal_id', 'component_id');
+   
      }
      
-   public function diet()
+   public function diets()
    {
        
-       return $this->belongsTo(Diet::class);
+    return $this->belongsToMany(Diet::class, 'diet_meal', 'meal_id', 'diet_id');
+   
   }
-// public function diets()
-// {
-//     return $this->belongsToMany(Diet::class)
-// }
-// public function diet()
-// {
-//     return $this->belongsToMany(Diet::class)->withTimestamps();
-// }
 
-    public function diet_Meal()
-     {
-        return $this->belongsTo('App\Diet_Meal');
-     }
+  public function owner()
+  {
+      return $this->belongsTo(Profile::class, 'owner_id');
+  }
 
 }
 

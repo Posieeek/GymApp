@@ -21,6 +21,7 @@ class TrainingTableSeeder extends Seeder
             //'name' => 'Damiana',
            
             'name' => $faker->word(),
+            'owner_id'=>$faker->numberBetween($min = 1, $max = 10),
         ]);
         
         //

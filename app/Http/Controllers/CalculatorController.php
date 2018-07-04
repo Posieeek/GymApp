@@ -16,8 +16,7 @@ class CalculatorController extends Controller
     public function index()
     {
         
-        $calculators = Calculator::latest()->paginate(5);
-        
+        $calculators = auth()->user()->calculators()->get();
         foreach ($calculators as $calculator)
         {
             $max_reps[]=($calculator->weight * (1 + 0.025 * $calculator->rep));
@@ -28,9 +27,7 @@ class CalculatorController extends Controller
             echo " kg na jedno powtórzenie podnosząc $b kg na $a powtórzenia"; 
           }
           */
-        return view('calculators.index',compact('calculators', 'max_reps'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
-
+            return view('calculators.index', compact('calculators', 'max_reps'));
 
     }
 
@@ -54,15 +51,12 @@ class CalculatorController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate([
-         
-            'weight' => 'required',
-          
-            'rep' => 'required',
-        ]);
-        Calculator::create($request->all());
+      
+        Calculator::create(array_merge($request->all(), ['owner_id' => auth()->id()]));
         return redirect()->route('calculators.index')
                         ->with('success','Exercise created successfully');
+
+                      
     }
 
 

@@ -14,28 +14,17 @@ class Diet extends Model
      *
      * @var array
      */
-    protected $fillable = [
-       
-        'id' ,
-        'name' ,
-    ];
+    protected $guarded = [];
 
-     public function meal()
+     public function meals()
      {
-         
-     return $this->hasMany(Meal::class);
-     }
-
-    public function diet_Meal()
-    {
-        return $this->belongsTo('App\Diet_Meal');
+        return $this->belongsToMany(Meal::class, 'diet_meal', 'diet_id', 'meal_id');
     }
 
-    // public function meals()
-    // {
-    //     return $this
-    //         ->belongsToMany(Meal::class)
-    //         ->withTimestamps();
-    // }
-    //
+     public function owner()
+    {
+        return $this->belongsTo(Profile::class, 'owner_id');
+    }
+
+  
 }

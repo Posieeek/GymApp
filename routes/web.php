@@ -53,6 +53,7 @@ Route::resource('exercises','ExerciseController');
 Route::resource('profiles','ProfileController');
 Route::resource('components','ComponentController');
 Route::resource('calculators','CalculatorController');
+Route::resource('diets','DietController');
 
   Route::post('/profiles/{profile}/comments', 'CommentsController@store');
 

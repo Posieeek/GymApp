@@ -16,7 +16,7 @@ class Meal_ComponentTableSeeder extends Seeder
         $faker = Faker::create('App\Diet');
         for($i = 1; $i <= 20; $i ++)
         {
-        DB::table('meal_components')->insert([
+        DB::table('meal_component')->insert([
             
             'meal_id' => $faker->numberBetween($min = 1, $max = 10),
             'component_id' => $faker->numberBetween($min = 1, $max = 10),

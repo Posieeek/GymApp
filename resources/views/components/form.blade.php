@@ -1,3 +1,12 @@
+
+
+<div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+              
+                    <div class="card-body">
+
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
@@ -31,8 +40,16 @@
             {!! Form::text('proteins', null, array('placeholder' => 'Weight','class' => 'form-control')) !!}
         </div>
     </div>
-  
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+    
             <button type="submit" class="btn btn-primary">Submit</button>
+            <a class="btn btn-primary" href="{{ route('components.index') }}"> Back</a>
     </div>
 </div>

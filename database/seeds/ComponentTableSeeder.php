@@ -23,6 +23,9 @@ class ComponentTableSeeder extends Seeder
             'carbohydrates' => $faker->randomElement(range(5,500)),
             'fat' => $faker->randomElement(range(5,500)),
             'proteins' => $faker->randomElement(range(5,500)),
+            'owner_id'=>$faker->numberBetween($min = 1, $max = 10),
+            'updated_at' => \Carbon\Carbon::now(),
+            'created_at' => \Carbon\Carbon::now(),
         ]);
 
         

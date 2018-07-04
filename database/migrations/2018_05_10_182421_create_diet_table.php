@@ -16,7 +16,10 @@ class CreateDietTable extends Migration
         Schema::create('diets', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-          
+            $table->integer('owner_id')->unsigned()->index();
+            $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
+            $table->timestamps();
+            
             
         });
     }

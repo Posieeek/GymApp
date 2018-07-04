@@ -5,12 +5,8 @@
     <div class="row">
         <div class="col-sm-8 ">
             <div class="pull-left">
-                <h2>Lista produktów</h2>
             </div>
-           
             <br>
-              
-           
         </div>
     </div>
 
@@ -20,8 +16,12 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-
-
+    <div class="row justify-content-center">
+        <div class="col-sm-6 ">
+        <h2>Lista produktów</h2>
+        <a class="btn btn-success" href="{{ route('components.create') }}"> Dodaj produkt</a>
+    <a href="{{route('meals.index')}}" class="btn btn-success">Twoje posiłki</a>
+    <a href="{{route('diets.index')}}" class="btn btn-success">Dieta</a>
     <table class="table table-striped  table-dark">
         <tr class="bg-primary">
             
@@ -55,7 +55,8 @@
     </tr>
     @endforeach
     </table>
-    <a class="btn btn-success" href="{{ route('components.create') }}"> Dodaj produkt</a>
+   
+    </div>
+    </div>
 
-    {!! $components->links() !!}
 @endsection

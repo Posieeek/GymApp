@@ -40,7 +40,8 @@ class ProfilesTableSeeder extends Seeder
             'weight' => $faker->numberBetween($min = 50, $max = 120),
             'experience' => $faker->randomDigit." years",
             'user_id' => $i,
-            
+            'updated_at' => \Carbon\Carbon::now(),
+            'created_at' => \Carbon\Carbon::now(),
 
         ]);
 

@@ -14,15 +14,13 @@ class Calculator extends Model
      *
      * @var array
      */
-    protected $fillable = [
-       
-        'id' ,
-        'name',
-      'weight',
-      'rep',
-      'max_rep',
-    ];
+    protected $guarded = [];
    
+    public function owner()
+    {
+        return $this->belongsTo(Profile::class, 'owner_id');
+    }
+
 }
 
 

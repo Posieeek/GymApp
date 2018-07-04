@@ -20,7 +20,8 @@ class CreateExerciseTable extends Migration
             $table->integer('ex_set');
             $table->integer('rep');
             $table->integer('volume')->unsigned()->nullable();
-         
+            $table->integer('owner_id')->unsigned()->index();
+            $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

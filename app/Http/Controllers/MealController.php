@@ -2,7 +2,7 @@
 
 
 namespace App\Http\Controllers;
-
+use App\Http\Requests\MealRequest;
 
 use Illuminate\Http\Request;
 use App\Component;
@@ -22,11 +22,10 @@ class MealController extends Controller
     {
 
         
-        $meals = Meal::latest()->paginate(5);
+        $meals = auth()->user()->meals()->get();
      
        
-        return view('meals.index',compact('meals'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('meals.index', compact('meals'));
     }
    
 
@@ -39,7 +38,10 @@ class MealController extends Controller
      */
     public function create()
     {
-        return view('meals.create');
+        $components = auth()->user()->components;
+        $componentIds = $components->pluck('id')->toArray();
+
+        return view('meals.create', compact('components', 'componentIds'));
     }
 
 
@@ -49,15 +51,25 @@ class MealController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MealRequest $request)
     {
-        request()->validate([
-            'name' => 'required',
-            'diet_id' => 'required',
+       
+
+        $meal = Meal::create([
+            'name' => $request->name,
+            'owner_id' => auth()->id()
         ]);
-        Meal::create($request->all());
+        $meal->components()->sync($request->components);
+
         return redirect()->route('meals.index')
-                        ->with('success','Posiłek stworzony pomyślnie!');
+        ->with('message', 'Stworzono posiłek');
+
+
+                       
+                
+                      
+                
+                        
     }
 
 
@@ -67,9 +79,9 @@ class MealController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Meal $meal)
     {
-        $meal = Meal::find($id);
+       
         return view('meals.show',compact('meal'));
     }
 
@@ -80,10 +92,12 @@ class MealController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Meal $meal)
     {
-        $meal = Meal::find($id);
-        return view('meals.edit',compact('meal'));
+        $components = auth()->user()->components;
+        $componentIds = $components->pluck('id')->toArray();
+
+        return view('meals.edit', compact('meal', 'components', 'componentIds'));
     }
 
 
@@ -94,16 +108,20 @@ class MealController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(MealRequest $request, Meal $meal)
     {
-        request()->validate([
-            'name' => 'required',
-            'diet_id' => 'required',
-        
+      
+
+        $meal->update([
+            'name' => $request->name,
         ]);
-        Meal::find($id)->update($request->all());
+
+        if (isset($meal->components)) {
+            $meal->components()->sync($request->components);
+        }
+
         return redirect()->route('meals.index')
-                        ->with('success','Posiłek zaktualizowany pomyślnie!');
+            ->with('message', 'Pomyślnie zaktualizowano posiłek.');
     }
 
 

@@ -16,6 +16,9 @@ class CreateTrainingTable extends Migration
         Schema::create('trainings', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->integer('owner_id')->unsigned()->index();
+            $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
+           
             
            
         });

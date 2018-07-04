@@ -17,13 +17,15 @@ class CreateMealTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('diet_id')->unsigned()->nullable();
-
+            $table->integer('owner_id')->unsigned()->index();
+            
             $table->timestamps();
            
         });
   Schema::table('meals', function (Blueprint $table) {
         $table->foreign('diet_id')->references('id')->on('diets');
-       
+        $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
+           
         
     });
         

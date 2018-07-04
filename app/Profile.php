@@ -55,16 +55,7 @@ class Profile extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function Diet()
-    {
-        return $this->belongsTo('App\Diet');
-    }
-
-    public function Training()
-    {
-        return $this->belongsTo('App\Training');
-    }
-
+    
 
 
 }

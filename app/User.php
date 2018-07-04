@@ -79,6 +79,36 @@ class User extends Authenticatable
     {
         return $this->hasMany(Comment::class);
     }
+
+    public function trainings()
+    {
+        return $this->hasMany(Training::class, 'owner_id');
+    }
+
+    public function exercises()
+    {
+        return $this->hasMany(Exercise::class, 'owner_id');
+    }
+
+    public function components()
+    {
+        return $this->hasMany(Component::class, 'owner_id');
+    }
+
+    public function diets()
+    {
+        return $this->hasMany(Diet::class, 'owner_id');
+    }
+
+    public function meals()
+    {
+        return $this->hasMany(Meal::class, 'owner_id');
+    }
+ 
+    public function calculators()
+    {
+        return $this->hasMany(Calculator::class, 'owner_id');
+    }
    
 }
 

@@ -14,30 +14,17 @@ class Component extends Model
      *
      * @var array
      */
-    protected $fillable = [
-       
-        'id' ,
-      'name',
-      'weight',
-      'calories',
-      'carbohydrates',
-      'fat',
-      'proteins',
-      
-    
-    ];
+    protected $guarded = [];
 
-    public function meal_Component()
+    public function meals()
     {
-        return $this->belongsTo('App\Meal_Component');
-    }
-
-    public function meal()
-    {
-        return $this->belongsTo('App\Meal');
+        return $this->belongsToMany(Meal::class, 'meal_component', 'component_id', 'meal_id');
     }
     
-
+    public function owner()
+    {
+        return $this->belongsTo(Profile::class, 'owner_id');
+    }
    
 }
 

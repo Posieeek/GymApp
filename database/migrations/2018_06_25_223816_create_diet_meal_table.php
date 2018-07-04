@@ -13,7 +13,7 @@ class CreateDietMealTable extends Migration
      */
     public function up()
     {
-        Schema::create('diet_meals', function (Blueprint $table) {
+        Schema::create('diet_meal', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('diet_id')->unsigned()->index();
             $table->foreign('diet_id')->references('id')->on('diets')->onDelete('cascade');

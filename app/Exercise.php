@@ -14,18 +14,16 @@ class Exercise extends Model
      *
      * @var array
      */
-    protected $fillable = [
-       
-        'id' ,
-      'name',
-      'weight',
-      'ex_set',
-      'rep',
-      'volume',
-    ];
-    public function Training_Exercise()
+    protected $guarded = [];
+  
+    public function trainings()
     {
-        return $this->belongsTo('App\Training_Exercise');
+        return $this->belongsToMany(Training::class, 'training_exercise', 'exercise_id', 'training_id');
+    }
+
+    public function owner()
+    {
+        return $this->belongsTo(Profile::class, 'owner_id');
     }
 }
 

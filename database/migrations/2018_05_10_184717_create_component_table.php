@@ -21,7 +21,9 @@ class CreateComponentTable extends Migration
             $table->integer('carbohydrates');
             $table->integer('fat');
             $table->integer('proteins');
-          
+            $table->integer('owner_id')->unsigned()->index();
+            $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
+            
             
             $table->timestamps();
         });

@@ -19,6 +19,8 @@ class CreateCalculatorTable extends Migration
             $table->integer('weight');
             $table->integer('rep');
             $table->double('max_rep')->unsigned()->nullable();
+            $table->integer('owner_id')->unsigned()->index();
+            $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         
         });

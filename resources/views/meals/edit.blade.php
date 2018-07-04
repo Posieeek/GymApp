@@ -1,34 +1,57 @@
-@extends('layout')
-
+@extends('layouts.app')
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Edycja posiłku</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('meals.index') }}"> Back</a>
-            </div>
+<div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header"><h1>  Edytuj posiłek </h1></div>
+                    
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <hr>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+              
+                    <div class="card-body">
+    <form action="{{route('meals.update', ['meal' => $meal])}}" method="POST">
+        @csrf
+
+        <div class="form-group">
+            <label for="name">Nazwa posiłku:</label>
+            <input type="text" class="form-control" name="name" id="name" value="{{$meal->name}}"/>
         </div>
-    </div>
 
-
-    @if (count($errors) > 0)
-        <div class="alert alert-danger">
-            <strong>Whoops!</strong> There were some problems with your input.<br><br>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
+        <div class="form-group">
+            <label for="components">Produkty:</label>
+            <select class="form-control" multiple="multiple" name="components[]" id="components"
+                   >
+                @foreach($components as $component)
+                    <option value="{{$component->id}}"
+                            @if(in_array($component->id, $componentIds)) @endif
+                            @if(in_array($component->id, $meal->components->pluck('id')->toArray())) selected @endif>
+                        {{$component->name}} ({{$component->weight}} g)
+                    </option>
                 @endforeach
-            </ul>
+            </select>
         </div>
-    @endif
-
-
-    {!! Form::model($meal, ['method' => 'PATCH','route' => ['meals.update', $meal->id]]) !!}
-        @include('meals.form')
-    {!! Form::close() !!}
-
-
+        </div>
+</div>
+</div>
+</div>
+</div>
+        <div class="form-group">
+            <p class="text-center">
+                {{method_field('PATCH')}}
+                <button class="btn btn-primary btn-lg" type="submit">Zapisz</button>
+                <a href="{{route('meals.index')}}" class="btn btn-primary btn-lg clearfix">Wróć</a>
+            </p>
+        </div>
+    </form>
 @endsection
