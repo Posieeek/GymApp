@@ -56,6 +56,9 @@ Route::resource('components','ComponentController');
 Route::resource('calculators','CalculatorController');
 Route::resource('diets','DietController');
 
+Route::delete('/trainings/{trainingId}/exercise/{exerciseId}', 'ExerciseController@deleteFromTraining')
+    ->name('exercises.deleteFromTraining');
+
   Route::post('/profiles/{profile}/comments', 'CommentsController@store');
 
   Route::middleware('role:SuperAdmin')->prefix('superadmin')->group(function () {

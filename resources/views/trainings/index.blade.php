@@ -54,7 +54,7 @@
         <td>
     
             <a class="btn btn-primary" href="{{ route('exercises.edit',$exercise->id) }}">Edytuj</a>
-            {!! Form::open(['method' => 'DELETE','route' => ['exercises.destroy', $exercise->id],'style'=>'display:inline']) !!}
+            {!! Form::open(['method' => 'DELETE','route' => ['exercises.deleteFromTraining', $exercise->id, $training->id],'style'=>'display:inline']) !!}
             {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
             {!! Form::close() !!}
         </td>

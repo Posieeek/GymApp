@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ExerciseRequest;
 use App\Exercise;
+use App\Training;
 use Illuminate\Http\Request;
 
 class ExerciseController extends Controller
@@ -107,5 +108,13 @@ class ExerciseController extends Controller
         $exercise->delete();
 
         return back()->with('message', 'Pomyślnie usunięto ćwiczenie.');
+    }
+
+    public function deleteFromTraining($exerciseId, $trainingId)
+    {
+        $training = Training::find($trainingId);
+        $training->exercises()->detach($exerciseId);
+
+        return back()->with('message', 'Pomyślnie usunięto ćwiczenie z wybranego treningu.');
     }
 }
