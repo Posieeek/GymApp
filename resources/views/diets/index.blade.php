@@ -43,6 +43,9 @@
     <td>{{$meal->name}}</td>   
         <td>
             <a class="btn btn-primary" href="{{ route('meals.edit',$meal->id) }}">Edytuj</a>
+            {!! Form::open(['method' => 'DELETE','route' => ['meals.deleteFromDiet', $meal->id,  $diet->id],'style'=>'display:inline']) !!}
+            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+            {!! Form::close() !!}
         </td>
     </tr>
     @endforeach

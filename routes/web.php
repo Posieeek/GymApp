@@ -56,6 +56,13 @@ Route::resource('components','ComponentController');
 Route::resource('calculators','CalculatorController');
 Route::resource('diets','DietController');
 
+
+Route::delete('/diets/{dietId}/meal/{mealId}', 'MealController@deleteFromDiet')
+    ->name('meals.deleteFromDiet');
+
+Route::delete('/meals/{mealId}/component/{componentId}', 'ComponentController@deleteFromMeal')
+    ->name('components.deleteFromMeal');
+
 Route::delete('/trainings/{trainingId}/exercise/{exerciseId}', 'ExerciseController@deleteFromTraining')
     ->name('exercises.deleteFromTraining');
 

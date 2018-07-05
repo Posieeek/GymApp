@@ -60,7 +60,7 @@
         <td>
     
             <a class="btn btn-primary" href="{{ route('components.edit',$component->id) }}">Edytuj</a>
-            {!! Form::open(['method' => 'DELETE','route' => ['components.destroy', $component->id],'style'=>'display:inline']) !!}
+            {!! Form::open(['method' => 'DELETE','route' => ['components.deleteFromMeal', $component->id,  $meal->id],'style'=>'display:inline']) !!}
             {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
             {!! Form::close() !!}
         </td>

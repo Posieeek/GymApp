@@ -32,7 +32,7 @@
   <div class="form-group row">
 
 
-  <p class="text-center"><img src="/img/avatars/{{ $profile->avatar }}" style="width:60px; height:60px; margin-left: 15px  ">
+  <p class="text-center"><img src="/img/avatars/{{ $profile->avatar }}" style="width:80px; height:100px; margin-left: 15px  ">
                     </p>
                    
                             </div>
@@ -49,8 +49,9 @@
                             <div class="col-md-6">
                             <table class="table table-striped  table-dark">
         <tr class="bg-primary">
+        @isset($profile->name)
         <th>{{ $profile->name}} </th>
-    
+        @endisset
                              
                                 </table>
                             </div>
@@ -61,8 +62,9 @@
                             <div class="col-md-6">
                             <table class="table table-striped  table-dark">
         <tr class="bg-primary">
+        @isset($profile->last_name)
         <th>{{ $profile->last_name}} </th>
-    
+        @endisset
                              
                                 </table>
                             </div>
@@ -73,8 +75,9 @@
                             <div class="col-md-6">
                             <table class="table table-striped  table-dark">
         <tr class="bg-primary">
+        @isset($profile->height)
         <th>{{ $profile->height}} </th>
-    
+        @endisset
                              
                                 </table>
                             </div>
@@ -85,8 +88,9 @@
                             <div class="col-md-6">
                             <table class="table table-striped  table-dark">
         <tr class="bg-primary">
+        @isset($profile->weight)
         <th>{{ $profile->weight}} </th>
-    
+        @endisset
                              
                                 </table>
                             </div>
@@ -97,8 +101,9 @@
                             <div class="col-md-6">
                             <table class="table table-striped  table-dark">
         <tr class="bg-primary">
+        @isset($profile->experience)
         <th>{{ $profile->experience}} </th>
-    
+        @endisset
                              
                                 </table>
                             </div>

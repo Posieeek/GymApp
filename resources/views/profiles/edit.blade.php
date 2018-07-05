@@ -2,13 +2,17 @@
 
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-4 margin-tb">
-            <div class="pull-center">
-            </div>
-          
-        </div>
-    </div>
+<div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="card-header"><h1>  Edytuj profil </h1></div>
+                    
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
     @if (count($errors) > 0)
@@ -21,11 +25,26 @@
             </ul>
         </div>
     @endif
-
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card">
+              
+                    <div class="card-body">
 
     {!! Form::model($profile, ['method' => 'PATCH','route' => ['profiles.update', $profile->id]]) !!}
         @include('profiles.form')
     {!! Form::close() !!}
-
-
+    </div>
+        </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+        </div>
+</div>
+</div>
+</div>
+</div>
 @endsection

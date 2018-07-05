@@ -108,4 +108,6 @@ class DietController extends Controller
         return redirect()->route('diets.index')
             ->with('message', 'Pomyślnie usunięto dietę.');
     }
+
+    
 }

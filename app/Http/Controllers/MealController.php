@@ -9,7 +9,7 @@ use App\Component;
 use App\Profile;
 use App\User;
 use App\Meal;
-
+use App\Diet;
 
 class MealController extends Controller
 {
@@ -137,5 +137,13 @@ class MealController extends Controller
         $meal->delete();
 
         return back()->with('message', 'Pomyślnie usunięto posiłek.');
+    }
+
+    public function deleteFromDiet($mealId, $dietId)
+    {
+        $diet = Diet::find($dietId);
+        $diet->meals()->detach($mealId);
+
+        return back()->with('message', 'Pomyślnie usunięto posiłek z diety.');
     }
 }

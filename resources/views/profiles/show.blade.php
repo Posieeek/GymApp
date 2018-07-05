@@ -103,7 +103,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <label for="imie"
                                    class="col-sm-4 col-form-label text-md-right">{{ __('Dieta:') }}</label>
                             <div class="col-md-6">
@@ -129,7 +129,7 @@
                                     </tr>
                                 </table>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="form-group row">
                             <label class="col-sm-4 col-form-label text-md-right">{{ __('') }}</label>

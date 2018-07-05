@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ComponentRequest;
 use App\Component;
 use App\Profile;
+use App\Meal;
 use App\User;
 
 
@@ -112,5 +113,13 @@ class ComponentController extends Controller
         $component->delete();
 
         return redirect()->route('components.index')->with('message', 'Pomyślnie usunięto produkt.');
+    }
+
+    public function deleteFromMeal($componentId, $mealId)
+    {
+        $meal = Meal::find($mealId);
+        $meal->components()->detach($componentId);
+
+        return back()->with('message', 'Pomyślnie usunięto produkt z danego posiłku.');
     }
 }

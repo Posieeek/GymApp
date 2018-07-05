@@ -2,7 +2,7 @@
 <div class="container2">
     
                 
-  <h1>  Edytuj profil </h1>
+
 <div class="row">
 
     <div class="col-xs-4 col-sm-4 col-md-4">
