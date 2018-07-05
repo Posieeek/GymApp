@@ -18,7 +18,7 @@
                     <td>{{$role->description}}</td>
                     <td>
                         <div class="btn-group">
-                            <a class="btn btn-warning" href="{{ route('roles.edit', ['role' => $role]) }}"
+                            <a class="btn btn-primary" href="{{ route('roles.edit', ['role' => $role]) }}"
                                role="button">Edytuj</a>
                             <form action="{{ route('roles.destroy', ['role' => $role]) }}" method="POST">
                                 @csrf
@@ -40,7 +40,7 @@
                 <th></th>
             </tr>
             </thead>
-            <tbody class="table-primary table-bordered">
+            <tbody class="table-dark table-bordered">
             @foreach($filteredUsers as $filteredUser)
                 <tr>
                     <td>{{ $filteredUser->username }}</td>
@@ -56,6 +56,6 @@
             @endforeach
             </tbody>
         </table>
-        <a class="btn btn-dark" href="{{ route('assign-roles') }}" role="button">Przydziel Role</a>
+        <a class="btn btn-dark" href="{{ route('assign-roles') }}" role="button">Przydziel rolę</a>
     </div>
 @endsection

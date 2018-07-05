@@ -12,6 +12,15 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('users')->insert([
+            'username' => 'testuser99',
+            'email' => 'tu@asd.com',
+            'password' => bcrypt('sasasa'),
+            'remember_token' => str_random(10),
+            'updated_at' => \Carbon\Carbon::now(),
+            'created_at' => \Carbon\Carbon::now(),
+        ]);
+        
         $faker = Faker::create('App\User');
         for ($i = 1; $i <= 10; $i++) {
             /*  DB::table('users')->insert([
@@ -21,7 +30,8 @@ class UserTableSeeder extends Seeder
                   'password' => bcrypt('zxcvb123'),
 
                   ]);
-      */
+      */  
+
             DB::table('users')->insert([
                 'username' => $faker->userName . $faker->randomNumber(),
                 'email' => $faker->freeEmail(),
@@ -33,14 +43,7 @@ class UserTableSeeder extends Seeder
 
         }
 
-        DB::table('users')->insert([
-            'username' => 'testuser99',
-            'email' => 'tu@asd.com',
-            'password' => bcrypt('asdasdasd'),
-            'remember_token' => str_random(10),
-            'updated_at' => \Carbon\Carbon::now(),
-            'created_at' => \Carbon\Carbon::now(),
-        ]);
+     
 
         //
     }

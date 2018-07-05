@@ -14,7 +14,7 @@ class ComponentTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create('App\Component');
-        for($i = 1; $i <= 10; $i ++)
+        for($i = 1; $i <= 20; $i ++)
         {
         DB::table('components')->insert([
             'name' => $faker->word(),

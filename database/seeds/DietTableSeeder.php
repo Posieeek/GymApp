@@ -14,7 +14,7 @@ class DietTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create('App\Diet');
-        for($i = 1; $i <= 10; $i ++)
+        for($i = 1; $i <= 11; $i ++)
         {
         DB::table('diets')->insert([
           

@@ -22,7 +22,8 @@ class DatabaseSeeder extends Seeder
        
       $this->call(DietMealTableSeeder::class);
       $this->call(ProfilesTableSeeder::class);
-       
+      $this->call(RolesTableSeeder::class);
+      $this->call(RoleUserTableSeeder::class);
        /** 
          *
        *    

@@ -4,7 +4,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Edytuj Role</div>
+                    <div class="card-header">Edytuj rolę</div>
                     <form action="{{ route('roles.update', ['role' => $role]) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
@@ -20,7 +20,8 @@
                         <div class="form-group">
                             <p class="text-center">
                                 {{method_field('PATCH')}}
-                                <button class="btn btn-primary btn-lg" type="submit">Zapisz</button>
+                                <button class="btn btn-success btn-lg" type="submit">Zapisz</button>
+                                <a class="btn btn-success btn-lg" href="{{ route('roles.index',$role->id) }}">Wróć</a>
                             </p>
                         </div>
                     </form>
